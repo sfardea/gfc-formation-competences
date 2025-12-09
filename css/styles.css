@@ -744,7 +744,7 @@ ul {
 }
 
 #title-approche {
-    margin-bottom: 0.4rem;
+    margin-bottom: -0.5rem;
 }
 
 /* ========================================
@@ -810,7 +810,8 @@ ul {
 .testimonial-content {
     margin-bottom: var(--spacing-md);
     font-style: italic;
-    color: rgb(41, 41, 41);
+    /* color: rgb(41, 41, 41); */
+    color: rgb(36 86 66);
     font-weight: 500;
     /* color: var(--text-gray); */
     line-height: 1.8;

@@ -1,0 +1,21 @@
+{
+  "name": "gfc-formation-competences",
+  "version": "1.0.0",
+  "description": "Site web pour Groupe Formation Compétences - Accompagnement expert pour votre bilan de compétences",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --port=8080",
+    "dev": "live-server --port=8080"
+  },
+  "keywords": [
+    "bilan de compétences",
+    "formation",
+    "accompagnement",
+    "reconversion"
+  ],
+  "author": "GFC",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -211,15 +211,16 @@ window.addEventListener('scroll', () => {
 const navbarStyle = document.createElement('style');
 navbarStyle.textContent = `
     .navbar.scrolled {
-        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.15);
-        padding: 0.5rem 0;
-        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+        padding: 0.75rem 0;
+        background: #0f172a;
         backdrop-filter: blur(10px);
     }
     
     .navbar.scrolled .logo-icon {
         width: 40px;
         height: 40px;
+        background: linear-gradient(135deg, #60a5fa, #34d399);
     }
     
     .navbar.scrolled .logo-icon i {
@@ -228,6 +229,43 @@ navbarStyle.textContent = `
     
     .navbar.scrolled .logo-subtitle {
         font-size: 1rem;
+        color: #f9fafb;
+        font-weight: 600;
+    }
+    
+    .navbar.scrolled .nav-menu a {
+        color: #f9fafb;
+    }
+    
+    .navbar.scrolled .nav-menu a:hover {
+        color: #60a5fa;
+    }
+    
+    .navbar.scrolled .nav-cta {
+        background: linear-gradient(135deg, #3b82f6, #10b981);
+        color: white !important;
+        border: none;
+    }
+    
+    .navbar.scrolled .nav-cta:hover {
+        background: linear-gradient(135deg, #60a5fa, #34d399);
+        transform: scale(1.05);
+    }
+    
+    .navbar.scrolled .mobile-menu-toggle span {
+        background: #f9fafb;
+    }
+    
+    @media (max-width: 768px) {
+        .navbar.scrolled .nav-menu {
+            background: #0f172a;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar.scrolled .nav-menu a {
+            color: #f3f4f6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
     }
     
     .mobile-menu-toggle.active span:nth-child(1) {

@@ -191,28 +191,31 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-    border-radius: 10px;
+    width: 45px;
+    height: 45px;
     transition: all 0.3s ease;
 }
 
-.logo-icon i {
-    font-size: 1.5rem;
-    color: white;
+.logo-icon svg {
+    width: 45px;
+    height: 45px;
+    color: var(--primary-color);
 }
 
 .logo:hover .logo-icon {
     transform: rotate(-10deg) scale(1.1);
-    box-shadow: var(--shadow-md);
+}
+
+.logo:hover .logo-icon svg {
+    color: var(--primary-dark);
 }
 
 .logo-subtitle {
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--text-dark);
-    font-family: var(--font-heading);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
     transition: all 0.3s ease;
 }
 
@@ -399,12 +402,6 @@ ul {
     margin-bottom: var(--spacing-xl);
 }
 
-.intro-text .highlight {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
-}
 
 .process-steps {
     display: grid;
@@ -490,6 +487,87 @@ ul {
     color: var(--secondary-color);
     font-size: 1.25rem;
     margin-top: 2px;
+}
+
+/* ========================================
+   Quote Banner
+   ======================================== */
+.quote-banner {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(90deg, #e0e7ff 0%, #dbeafe 50%, #e0e7ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(37, 99, 235, 0.03) 50%, transparent 100%);
+    pointer-events: none;
+}
+
+.quote-banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(37, 99, 235, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.quote-banner-content::before {
+    content: '"';
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    font-size: 150px;
+    color: rgba(37, 99, 235, 0.08);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 0;
+}
+
+.quote-line {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.4;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 1;
+}
+
+.quote-line:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .quote-banner {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .quote-banner-content {
+        padding: var(--spacing-lg) var(--spacing-md);
+        border-radius: 12px;
+    }
+    
+    .quote-line {
+        font-size: 1.25rem;
+    }
+    
+    .quote-banner-content::before {
+        font-size: 100px;
+        top: -20px;
+        left: 15px;
+    }
 }
 
 /* ========================================

@@ -166,7 +166,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observer les éléments à animer
-document.querySelectorAll('.process-step, .method-card, .testimonial-card, .feature').forEach(el => {
+document.querySelectorAll('.process-step, .method-card, .testimonial-card, .feature, .quote-banner-content').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -220,11 +220,12 @@ navbarStyle.textContent = `
     .navbar.scrolled .logo-icon {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #60a5fa, #34d399);
     }
     
-    .navbar.scrolled .logo-icon i {
-        font-size: 1.25rem;
+    .navbar.scrolled .logo-icon svg {
+        width: 40px;
+        height: 40px;
+        color: #60a5fa;
     }
     
     .navbar.scrolled .logo-subtitle {

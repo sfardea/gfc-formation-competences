@@ -139,6 +139,52 @@ ul {
     box-shadow: var(--shadow-lg);
 }
 
+/* Section CTAs */
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.section-cta .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+/* Orange CTA Buttons (Contact/Form) */
+.btn-orange {
+    background: #ff6900;
+    color: white;
+}
+
+.btn-orange:hover {
+    background: #e55a00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 105, 0, 0.3);
+}
+
+/* Form Submit Button - Orange */
+.btn-form-submit {
+    background: #ff6900;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.btn-form-submit:hover {
+    background: #e55a00;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 105, 0, 0.3);
+}
+
 .btn-secondary {
     background: var(--primary-color);
     color: white;
@@ -195,17 +241,17 @@ ul {
 
 .logo-groupe-text {
     font-family: 'POPPINS'!important;
-    font-size: 1.4rem!important;
+    font-size: 1.05rem!important;
     font-weight: 300!important;
     color: #170682!important;
     letter-spacing: 1.5px!important;
     text-transform: uppercase!important;
-    margin-bottom: -13px!important;
+    margin-bottom: -10px!important;
     margin-left: 1px!important;
 }
 
 .logo-svg {
-    width: 140px;
+    width: 105px;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -231,8 +277,74 @@ ul {
     color: var(--primary-color);
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    position: relative;
+    padding-right: 20px !important;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    padding: 0.5rem 0;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+    background: #f3f4f6;
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
 .nav-cta {
-    background: #363636;
+    background: #ff6900;
     color: white !important;
     padding: var(--spacing-xs) var(--spacing-md) !important;
     border-radius: 6px;
@@ -240,9 +352,10 @@ ul {
 }
 
 .nav-cta:hover {
-    background: #0a0a0a;
+    background: #e55a00;
     color: white !important;
     transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 105, 0, 0.3);
 }
 
 .mobile-menu-toggle {
@@ -263,16 +376,139 @@ ul {
 }
 
 /* ========================================
+   Hero Image Section (Deprecated - Image now in circle)
+   ======================================== */
+/* .hero-image-section {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0;
+}
+
+.hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+@media (max-width: 768px) {
+    .hero-image-section {
+        height: 420px;
+        margin-top: 0;
+    }
+} */
+
+/* ========================================
    Hero Section
    ======================================== */
 .hero {
-    padding: calc(180px + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    padding: calc(150px + var(--spacing-2xl)) 0 var(--spacing-2xl);
     /* background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(29, 78, 216, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover; */
     color: #1d4ed8;
-    text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-image-circle {
+    width: 500px;
+    height: 450px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    transform: rotate(3deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-image-circle:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.hero-image-circle::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(135deg, #ff6900, #170682);
+    border-radius: 35px;
+    z-index: -1;
+}
+
+.hero-image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 30px;
+}
+
+@media (max-width: 1200px) {
+    .hero-image-circle {
+        width: 400px;
+        height: 360px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-image-circle {
+        width: 350px;
+        height: 315px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-image-circle {
+        width: 300px;
+        height: 270px;
+        margin: 0 auto;
+        transform: rotate(0deg);
+    }
 }
 
 .hero::before {
@@ -309,11 +545,17 @@ ul {
 
 .hero-cta {
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
+    gap: 1rem;
+    justify-content: flex-start;
     margin-bottom: var(--spacing-xl);
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Force les boutons sur la même ligne */
     animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-cta .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    white-space: nowrap; /* Empêche le texte de se couper */
 }
 
 .hero-trust {
@@ -1184,13 +1426,14 @@ ul {
     }
     
     .logo-groupe-text {
-        font-size: 0.65rem;
+        font-size: 0.9rem!important;
         letter-spacing: 1px;
-        margin-left: 2px;
+        margin-left: 1px!important;
+        margin-bottom: -8px!important;
     }
     
     .logo-svg {
-        width: 120px;
+        width: 90px;
     }
     
     .hero-title {
@@ -1198,13 +1441,20 @@ ul {
     }
     
     .hero-cta {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: nowrap; /* Force sur la même ligne même sur mobile */
     }
     
     .hero-cta .btn {
-        width: 100%;
-        max-width: 300px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        min-width: 0; /* Permet aux boutons de rétrécir si nécessaire */
+    }
+    
+    .hero-cta .btn i {
+        display: none; /* Cache les icônes sur mobile pour gagner de la place */
     }
     
     .hero-trust {
@@ -1262,13 +1512,14 @@ ul {
 
 @media (max-width: 480px) {
     .logo-groupe-text {
-        font-size: 0.6rem;
+        font-size: 0.8rem!important;
         letter-spacing: 0.5px;
-        margin-left: 1px;
+        margin-left: 1px!important;
+        margin-bottom: -7px!important;
     }
     
     .logo-svg {
-        width: 100px;
+        width: 75px;
     }
     
     .hero-title {

@@ -60,7 +60,13 @@
                     <span></span>
                 </button>
                 <ul class="nav-menu">
-                    <li><a href="#methode">Notre méthode</a></li>
+                    <li class="dropdown">
+                        <a href="#methode" class="dropdown-toggle">Notre méthode</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bilan-competences.html">Bilan de compétences</a></li>
+                            <li><a href="vae.html">VAE</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#approche">Notre approche</a></li>
                     <li><a href="#temoignages">Témoignages</a></li>
                     <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -90,22 +96,27 @@
     -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    Préparez votre bilan de compétences avec un accompagnement expert et structuré
-                </h1>
-                <p class="hero-subtitle">
-                    Nous clarifions votre situation, structurons votre projet et vous aidons à choisir, en toute sécurité, le bon bilan, avec le bon organisme.
-                </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary btn-lg">
-                        <i class="fas fa-phone"></i>
-                        Être rappelé par un conseiller expert
-                    </a>
-                    <a href="#methode" class="btn btn-secondary btn-lg">
-                        <i class="fas fa-compass"></i>
-                        Découvrir notre méthode en 3 phases
-                    </a>
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Préparez votre bilan de compétences avec un accompagnement expert et structuré
+                    </h1>
+                    <p class="hero-subtitle">
+                        Nous clarifions votre situation, structurons votre projet et vous aidons à choisir, en toute sécurité, le bon bilan, avec le bon organisme.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-orange btn-lg">
+                            <i class="fas fa-phone"></i>
+                            Être rappelé par un conseiller expert
+                        </a>
+                        <a href="#methode" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-compass"></i>
+                            Découvrir notre méthode en 3 phases
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-circle">
+                    <img src="assets/images/hero.png" alt="Bilan de compétences et accompagnement professionnel">
                 </div>
             </div>
         </div>
@@ -185,6 +196,9 @@
                         <span><strong>Résultat :</strong> quand vous démarrez votre bilan ou votre formation, vous savez où vous allez, avec qui, et pourquoi.</span>
                     </div>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-orange">Je veux clarifier mon projet</a>
             </div>
         </div>
     </section>
@@ -308,6 +322,9 @@
                     C'est que votre projet soit cohérent, et que votre parcours tienne la route.
                 </p>
             </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-orange">Démarrer mon accompagnement</a>
+            </div>
         </div>
     </section>
 
@@ -387,6 +404,9 @@
                     </div>
                 </div>
             </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-orange">Je veux être accompagné(e)</a>
+            </div>
         </div>
     </section>
 
@@ -408,6 +428,9 @@
                         <p>vous donner une vision claire des grandes options de financement, pour que l'argent ne soit ni un tabou, ni un piège.</p>
                     </div>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-orange">En savoir plus sur les financements</a>
             </div>
         </div>
     </section>
@@ -501,7 +524,7 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                    <button type="submit" class="btn btn-form-submit btn-lg btn-block">
                         <i class="fas fa-paper-plane"></i>
                         Je souhaite être rappelé(e) par un conseiller
                     </button>

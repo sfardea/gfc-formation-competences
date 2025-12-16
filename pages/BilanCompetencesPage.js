@@ -44,25 +44,29 @@ export class BilanCompetencesPage extends Component {
                     </div>
                 </section>
 
-                <!-- Indicateurs de confiance -->
-                <div class="hero-trust">
-                    <div class="trust-item">
-                        <i class="fas fa-certificate"></i>
-                        <span>Réseau d'organismes partenaires certifiés Qualiopi</span>
+                <!-- Cartes de réassurance -->
+                <section class="reassurance-cards">
+                    <div class="container">
+                        <div class="cards-grid">
+                            <div class="reassurance-card scale-in">
+                                <i class="fas fa-network-wired"></i>
+                                <p>Réseau d'organismes partenaires certifiés Qualiopi</p>
+                            </div>
+                            <div class="reassurance-card scale-in">
+                                <i class="fas fa-balance-scale"></i>
+                                <p>Respect d'une charte déontologique bilan & accompagnement</p>
+                            </div>
+                            <div class="reassurance-card scale-in">
+                                <i class="fas fa-star"></i>
+                                <p>Avis clients vérifiés</p>
+                            </div>
+                            <div class="reassurance-card scale-in">
+                                <i class="fas fa-laptop"></i>
+                                <p>Accompagnement possible 100% à distance</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="trust-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Respect d'une charte déontologique bilan & accompagnement</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-star"></i>
-                        <span>Avis clients vérifiés</span>
-                    </div>
-                    <div class="trust-item">
-                        <i class="fas fa-laptop"></i>
-                        <span>Accompagnement possible 100% à distance</span>
-                    </div>
-                </div>
+                </section>
 
                 <!-- Ce que fait concrètement Formation Compétences -->
                 <section class="what-we-do" id="methode">

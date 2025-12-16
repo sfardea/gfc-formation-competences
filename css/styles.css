@@ -1124,9 +1124,11 @@ ul {
         rgba(239, 246, 255, 1) 30%,
         rgba(219, 234, 254, 1) 45%,
         rgba(191, 219, 254, 1) 60%,
-        rgba(147, 197, 253, 1) 75%,
-        rgba(96, 165, 250, 1) 87%,
-        rgba(59, 130, 246, 1) 100%);
+        rgba(147, 197, 253, 1) 70%,
+        rgba(96, 165, 250, 1) 80%,
+        rgba(59, 130, 246, 1) 88%,
+        rgba(30, 64, 175, 1) 95%,
+        rgba(15, 30, 85, 1) 100%);
     position: relative;
 }
 
@@ -1287,9 +1289,13 @@ ul {
    ======================================== */
 .footer {
     padding: var(--spacing-xl) 0 var(--spacing-lg);
-    background: transparent;
+    background: linear-gradient(to bottom, 
+                rgba(30, 30, 30, 0.3) 0%, 
+                rgba(20, 20, 20, 0.5) 50%, 
+                rgba(10, 10, 10, 0.7) 100%);
     color: white;
     position: relative;
+    backdrop-filter: blur(5px);
 }
 
 .footer::before {
@@ -1299,8 +1305,8 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -1317,11 +1323,14 @@ ul {
     color: white;
     margin-bottom: var(--spacing-sm);
     font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
 }
 
 .footer-brand p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .footer-links h5,
@@ -1330,6 +1339,7 @@ ul {
     margin-bottom: var(--spacing-md);
     font-size: 1.125rem;
     font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .footer-links ul,
@@ -1339,25 +1349,29 @@ ul {
 
 .footer-links a,
 .footer-legal a {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 2;
     transition: var(--transition);
     font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .footer-links a:hover,
 .footer-legal a:hover {
     color: white;
     transform: translateX(5px);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: var(--spacing-md);
-    color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.875rem;
     position: relative;
     z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================

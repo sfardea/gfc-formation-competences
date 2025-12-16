@@ -115,7 +115,7 @@ export class HomePage extends Component {
                 <!-- Témoignages -->
                 <section class="testimonials" id="temoignages">
                     <div class="container">
-                        <h2 class="section-title fade-in">Témoignages & preuve sociale</h2>
+                        <h2 class="section-title fade-in">Témoignages</h2>
                         <p class="section-subtitle slide-up">Quelques personnes que nous avons aidées à sortir de la confusion.</p>
                         <div class="testimonials-grid">
                             ${this.renderTestimonials()}

@@ -240,14 +240,14 @@ ul {
 }
 
 .logo-groupe-text {
-    font-family: 'POPPINS'!important;
-    font-size: 1.05rem!important;
-    font-weight: 300!important;
-    color: #170682!important;
-    letter-spacing: 1.5px!important;
-    text-transform: uppercase!important;
-    margin-bottom: -10px!important;
-    margin-left: 1px!important;
+    font-family: 'POPPINS' !important;
+    font-size: 1.05rem !important;
+    font-weight: bold;
+    color: #170682 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: -10px !important;
+    margin-left: 1px !important;
 }
 
 .logo-svg {
@@ -1430,10 +1430,10 @@ ul {
     }
     
     .logo-groupe-text {
-        font-size: 0.9rem!important;
-        letter-spacing: 1px;
-        margin-left: 1px!important;
-        margin-bottom: -8px!important;
+        font-size: 0.9rem !important;
+        letter-spacing: 1px !important;
+        margin-left: 1px !important;
+        margin-bottom: -8px !important;
     }
     
     .logo-svg {
@@ -1516,10 +1516,10 @@ ul {
 
 @media (max-width: 480px) {
     .logo-groupe-text {
-        font-size: 0.8rem!important;
-        letter-spacing: 0.5px;
-        margin-left: 1px!important;
-        margin-bottom: -7px!important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.5px !important;
+        margin-left: 1px !important;
+        margin-bottom: -7px !important;
     }
     
     .logo-svg {

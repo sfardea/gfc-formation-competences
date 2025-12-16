@@ -155,13 +155,12 @@ export class HomePage extends Component {
                     <div class="container">
                         <div class="cta-content">
                             <div class="cta-benefits">
-                                <h3 class="fade-in">Rappel bénéfices</h3>
+                                <h3 class="fade-in">Pourquoi nous choisir ?</h3>
                                 <ul class="slide-up">
-                                    <li>Vous savez exactement ce que vous venez chercher dans votre parcours d'accompagnement.</li>
-                                    <li>Vous ne choisissez plus votre organisme au hasard.</li>
-                                    <li>Vous êtes accompagné(e) par un expert neutre, qui connaît tous les dispositifs et les acteurs du marché.</li>
+                                    <li><strong>Clarté totale :</strong> Vous savez exactement quel accompagnement correspond à vos besoins réels</li>
+                                    <li><strong>Choix éclairé :</strong> Plus de sélection au hasard, nous vous orientons vers l'organisme idéal</li>
+                                    <li><strong>Expertise neutre :</strong> Un conseiller indépendant qui maîtrise tous les dispositifs du marché</li>
                                 </ul>
-                                <a href="#contact-form" class="btn btn-orange scale-in">Je souhaite être rappelé(e) par un conseiller</a>
                             </div>
 
                             <div class="contact-form-wrapper" id="contact-form">

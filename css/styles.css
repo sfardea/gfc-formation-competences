@@ -1220,8 +1220,17 @@ ul {
 }
 
 .cta-content {
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
     margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 968px) {
+    .cta-content {
+        grid-template-columns: 1fr;
+    }
 }
 
 .cta-content .section-title {
@@ -1254,22 +1263,27 @@ ul {
 .contact-form-wrapper {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
+    background: linear-gradient(135deg, white, rgba(255, 105, 0, 0.02));
     padding: var(--spacing-xl);
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 105, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(43, 51, 94, 0.1);
     position: relative;
     z-index: 2;
 }
 
 .contact-form-wrapper h3 {
-    color: var(--text-dark);
+    color: var(--primary-blue);
     margin-bottom: var(--spacing-sm);
+    font-size: 1.75rem;
+    text-align: center;
 }
 
 .contact-form-wrapper > p {
     color: var(--text-gray);
     margin-bottom: var(--spacing-lg);
+    text-align: center;
+    font-size: 1.05rem;
 }
 
 .contact-form {
@@ -1616,6 +1630,63 @@ ul {
     .section-title {
         font-size: 1.5rem;
     }
+}
+
+/* ========================================
+   CTA Benefits Section
+   ======================================== */
+.cta-benefits {
+    background: white;
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(43, 51, 94, 0.08);
+    border: 1px solid rgba(43, 51, 94, 0.05);
+    margin-bottom: var(--spacing-xl);
+}
+
+.cta-benefits h3 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.cta-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cta-benefits li {
+    position: relative;
+    padding: var(--spacing-sm) 0 var(--spacing-sm) 3rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.cta-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: var(--spacing-sm);
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(255, 105, 0, 0.2);
+}
+
+.cta-benefits li strong {
+    color: var(--primary-blue);
+    font-weight: 600;
 }
 
 /* ========================================

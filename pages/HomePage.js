@@ -73,7 +73,6 @@ export class HomePage extends Component {
                         <div class="section-header">
                             <h2 class="section-title fade-in">Ce que fait concrètement Formation Compétences</h2>
                             <div class="section-intro slide-up">
-                                <p class="highlight">Nous ne réalisons pas l'accompagnement à votre place.</p>
                                 <p>Nous faisons le travail amont qui sécurise votre démarche : clarifier vos besoins réels, structurer votre projet professionnel, puis vous orienter vers le dispositif et l'organisme partenaire les plus adaptés.</p>
                             </div>
                         </div>

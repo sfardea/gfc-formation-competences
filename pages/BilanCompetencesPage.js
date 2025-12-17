@@ -57,7 +57,7 @@ export class BilanCompetencesPage extends Component {
                                 <p>Respect d'une charte déontologique stricte</p>
                             </div>
                             <div class="reassurance-card scale-in">
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-check"></i>
                                 <p>Avis clients vérifiés</p>
                             </div>
                             <div class="reassurance-card scale-in">

@@ -467,7 +467,7 @@ ul {
     border-radius: 30px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    /* box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15); */
     flex-shrink: 0;
     transform: rotate(3deg);
     transition: transform 0.3s ease;
@@ -1840,7 +1840,7 @@ ul {
     padding: var(--spacing-md);
     border-radius: 14px;
     border: 1px solid rgba(43, 51, 94, 0.08);
-    box-shadow: 0 4px 12px rgba(43, 51, 94, 0.06);
+    box-shadow: 0 4px 12px rgba(43, 51, 94, 0.288);
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -1865,12 +1865,13 @@ ul {
 .reassurance-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(43, 51, 94, 0.12);
-    background: linear-gradient(135deg, white, rgba(255, 106, 74, 0.03));
+    background-color: #ff6b4a50;
+    /* background: linear-gradient(135deg, white, rgba(255, 106, 74, 0.03)); */
 }
 
-.reassurance-card:hover::before {
+/* .reassurance-card:hover::before {
     transform: scaleY(1);
-}
+} */
 
 .reassurance-card i {
     font-size: 1.5rem;
@@ -1882,6 +1883,7 @@ ul {
 .reassurance-card p {
     margin: 0;
     font-size: 0.95rem;
+    font-family: Plus Jakarta Sans !important;
     color: var(--text-dark);
 }
 
@@ -1890,7 +1892,7 @@ ul {
    ======================================== */
 .what-we-do {
     padding: var(--spacing-2xl) 0;
-    background: white;
+    background-color: #132dd415;
 }
 
 .section-header {

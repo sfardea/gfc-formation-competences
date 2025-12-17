@@ -89,14 +89,14 @@ export class BilanCompetencesPage extends Component {
                 </section>
 
                 <!-- Quote Banner -->
-                <section class="quote-banner">
-                    <div class="container">
-                        <blockquote class="fade-in">
-                            <p>Vous n'avez pas besoin d'un accompagnement de plus.</p>
-                            <p>Vous avez besoin de comprendre lequel est vraiment fait pour vous.</p>
-                        </blockquote>
-                    </div>
-                </section>
+                // <section class="quote-banner">
+                //     <div class="container">
+                //         <blockquote class="fade-in">
+                //             <p>Vous n'avez pas besoin d'un accompagnement de plus.</p>
+                //             <p>Vous avez besoin de comprendre lequel est vraiment fait pour vous.</p>
+                //         </blockquote>
+                //     </div>
+                // </section>
 
                 <!-- Une méthode en 3 temps -->
                 <section class="method" id="approche">
@@ -181,7 +181,7 @@ export class BilanCompetencesPage extends Component {
         const steps = [
             {
                 number: 1,
-                title: "Comprendre finement votre situation",
+                title: "Comprendre votre situation",
                 content: [
                     "Vous n'êtes pas qu'un CV : Nous reprenons votre contexte actuel, votre parcours et vos transitions passées.",
                     "Nous intégrons vos contraintes réelles (temps, rythme, budget, mobilité, vie perso).",

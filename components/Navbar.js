@@ -49,7 +49,7 @@ export class Navbar extends Component {
                         </button>
                         <ul class="nav-menu ${this.state.mobileMenuOpen ? 'active' : ''}">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle">Notre méthode</a>
+                                <a href="#" class="dropdown-toggle">Nos offres</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/bilan-de-competences">Bilan de compétences</a></li>
                                     <li><a href="/vae">VAE</a></li>

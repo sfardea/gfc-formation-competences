@@ -257,15 +257,14 @@ ul {
 }
 
 .logo-groupe-text {
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 0.7rem !important;
-    /* font-style: oblique; */
-    /* font-weight: 600; */
+    font-family: 'Sacramento', cursive !important;
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
     color: #464646 !important;
-    letter-spacing: 0.8px !important;
-    text-transform: uppercase !important;
-    margin-bottom: -7.5px !important;
-    margin-left: 1px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: capitalize !important;
+    margin-bottom: -10px !important;
+    margin-left: 2px !important;
 }
 
 .logo-svg {
@@ -1550,10 +1549,10 @@ ul {
     }
     
     .logo-groupe-text {
-        font-size: 0.9rem !important;
-        letter-spacing: 1px !important;
-        margin-left: 1px !important;
-        margin-bottom: -8px !important;
+        font-size: 1.4rem !important;
+        letter-spacing: 0.5px !important;
+        margin-left: 2px !important;
+        margin-bottom: -10px !important;
     }
     
     .logo-svg {
@@ -1636,10 +1635,10 @@ ul {
 
 @media (max-width: 480px) {
     .logo-groupe-text {
-        font-size: 0.8rem !important;
-        letter-spacing: 0.5px !important;
-        margin-left: 1px !important;
-        margin-bottom: -7px !important;
+        font-size: 1.1rem !important;
+        letter-spacing: 0.3px !important;
+        margin-left: 2px !important;
+        margin-bottom: -9px !important;
     }
     
     .logo-svg {
@@ -1693,7 +1692,7 @@ ul {
     }
     
     .footer-logo-wrapper .logo-groupe-text {
-        font-size: 0.6rem !important;
+        font-size: 1.0rem !important;
     }
     
     .footer-logo-wrapper .logo-svg {

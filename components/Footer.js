@@ -40,7 +40,7 @@ export class Footer extends Component {
                         <div class="footer-links">
                             <h5>Liens utiles</h5>
                             <ul>
-                                <li><a href="/#methode">Notre méthode</a></li>
+                                <li><a href="/#methode">Notre offre</a></li>
                                 <li><a href="/#approche">Notre approche</a></li>
                                 <li><a href="/#temoignages">Témoignages</a></li>
                                 <li><a href="/#contact">Contact</a></li>

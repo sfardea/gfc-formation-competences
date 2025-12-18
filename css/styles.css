@@ -2054,6 +2054,10 @@ ul {
     text-align: center; /* Centre le titre */
 }
 
+.step-card p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 .step-card ul {
     list-style: none;
     margin: var(--spacing-sm) 0;
@@ -2063,6 +2067,7 @@ ul {
     padding: var(--spacing-xs) 0;
     padding-left: 1.5rem;
     position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .step-card li:before {
@@ -2078,4 +2083,5 @@ ul {
     border-top: 1px solid var(--border-color);
     color: var(--text-gray);
     font-style: italic;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }

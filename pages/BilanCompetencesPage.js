@@ -242,8 +242,8 @@ export class BilanCompetencesPage extends Component {
             }
         ];
 
-        return methods.map((method, index) => `
-            <div class="method-card scale-in" id="method-card-${index + 1}">
+        return methods.map(method => `
+            <div class="method-card scale-in">
                 <div class="method-icon">
                     <i class="fas ${method.icon}"></i>
                 </div>

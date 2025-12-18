@@ -637,13 +637,6 @@ ul {
     color: var(--text-dark);
 }
 
-.method .section-title:first-of-type {
-    padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
-    margin-top: var(--spacing-md);
-}
-
 .section-subtitle {
     text-align: center;
     color: var(--text-gray);
@@ -1887,8 +1880,8 @@ ul {
     background: white;
     padding: var(--spacing-md);
     border-radius: 14px;
-    border: 1px solid rgba(43, 51, 94, 0.08);
-    box-shadow: 0 4px 4px rgba(43, 51, 94, 0.288);
+    border: 2px solid rgba(8, 8, 8, 0.08);
+    /* box-shadow: 0 4px 4px rgba(43, 51, 94, 0.288); */
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -1913,7 +1906,7 @@ ul {
 .reassurance-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(43, 51, 94, 0.12);
-    background-color: #ff6b4a50;
+    background-color: #ff6b4a23;
     /* background: linear-gradient(135deg, white, rgba(255, 106, 74, 0.03)); */
 }
 

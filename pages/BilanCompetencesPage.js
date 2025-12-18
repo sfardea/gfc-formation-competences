@@ -72,7 +72,7 @@ export class BilanCompetencesPage extends Component {
                 <section class="what-we-do" id="methode">
                     <div class="container">
                         <div class="section-header">
-                            <h2 class="section-title fade-in">Ce que fait concrètement Formation Compétences</h2>
+                            <h2 class="section-title fade-in">Ce que nous proposons</h2>
                             <p class="section-subtitle slide-up">Nous faisons le travail amont qui sécurise votre démarche pour garantir votre réussite.</p>
                         </div>
 

@@ -25,6 +25,7 @@ export class MentionsLegalesPage extends Component {
                                 <strong>SIRET (siège) :</strong> 918 325 796 00012<br><br>
                                 <strong>RCS :</strong> 918 325 796 R.C.S. Lyon<br><br>
                                 <strong>N° TVA intracommunautaire :</strong> FR84918325796<br><br>
+                                <strong>NDA :</strong> 84691999369<br><br>
                                 <strong>Email :</strong> <a href="mailto:contact@groupe-formation-competences.fr">contact@groupe-formation-competences.fr</a>
                             </p>
                             

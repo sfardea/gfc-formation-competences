@@ -28,6 +28,10 @@ app.get('/vae', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'vae.html'));
 });
 
+app.get('/mentions-legales', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'mentions-legales.html'));
+});
+
 // Servir les fichiers du dossier public si besoin
 app.use('/public', express.static(path.join(__dirname, 'public')));
 

@@ -49,9 +49,9 @@ export class Footer extends Component {
                         <div class="footer-legal">
                             <h5>Informations légales</h5>
                             <ul>
-                                <li><a href="/mentions-legales" data-link>Mentions légales</a></li>
-                                <li><a href="/politique-confidentialite" data-link>Politique de confidentialite</a></li>
-                                <li><a href="/cgv" data-link>CGV</a></li>
+                                <li><a href="/mentions-legales" target="_blank" rel="noopener noreferrer">Mentions légales</a></li>
+                                <li><a href="/politique-confidentialite" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a></li>
+                                <li><a href="/cgv" target="_blank" rel="noopener noreferrer">CGV</a></li>
                             </ul>
                         </div>
                         <div class="footer-certification">

@@ -2575,7 +2575,7 @@ ul {
 }
 
 #step-card-1 .step-result {
-    color: var(--primary-orange);
+    color: var(--primary-blue);
 }
 
 #step-card-1 li:before {
@@ -2607,7 +2607,7 @@ ul {
 }
 
 #step-card-2 .step-result {
-    color: var(--primary-orange);
+    color: var(--primary-blue);
 }
 
 #step-card-2 li:before {
@@ -2639,7 +2639,7 @@ ul {
 }
 
 #step-card-3 .step-result {
-    color: var(--primary-orange);
+    color: var(--primary-blue);
 }
 
 #step-card-3 li:before {
@@ -2726,9 +2726,14 @@ ul {
 
 .step-result {
     margin-top: auto;
-    padding-top: var(--spacing-md);
+    margin-left: calc(-1 * var(--spacing-lg));
+    margin-right: calc(-1 * var(--spacing-lg));
+    margin-bottom: calc(-1 * var(--spacing-lg));
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: rgba(255, 106, 74, 0.15);
+    border-radius: 0 0 28px 32px;
     border-top: none;
-    color: var(--primary-orange);
+    color: var(--primary-blue);
     font-style: normal;
     font-weight: 700;
     font-family: 'Plus Jakarta Sans', sans-serif;

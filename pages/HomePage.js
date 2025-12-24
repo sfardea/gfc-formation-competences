@@ -129,7 +129,7 @@ export class HomePage extends Component {
                 <section class="hero-banner">
                     <div class="hero-banner-overlay"></div>
                     <div class="hero-banner-content">
-                        <p>Chaque parcours est unique. Le vôtre commence ici.</p>
+                        <p>Chaque parcours est unique. Le votre commence ici.</p>
                     </div>
                 </section>
 

@@ -1348,6 +1348,8 @@ ul {
     position: relative;
     height: 500px;
     background: url('/assets/images/hero.png') center center / cover no-repeat;
+    margin-top: -1px;
+    margin-bottom: -1px;
     display: flex;
     align-items: center;
     justify-content: center;

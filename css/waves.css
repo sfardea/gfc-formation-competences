@@ -80,6 +80,11 @@
     fill: #ffffff;
 }
 
+/* Banderole hero */
+.wave-banner {
+    fill: rgba(43, 50, 94, 0.7);
+}
+
 .wave-cream {
     fill: #fffbf5;
 }

@@ -839,7 +839,10 @@ ul {
 .section-title {
     text-align: center;
     margin-bottom: 0.75rem; /* Réduit l'espace avec le sous-titre */
-    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
 }
 
 .section-subtitle {

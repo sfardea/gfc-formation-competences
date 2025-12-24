@@ -539,16 +539,18 @@ ul {
 }
 
 .hero-video-bg .btn-secondary {
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    color: #ffffff;
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #ffffff;
+    color: var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .hero-video-bg .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     color: var(--primary-blue);
     border-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
 /* Cartes de réassurance dans le hero */

@@ -231,7 +231,7 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: #2e6fff3d;
+    background: white;
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: var(--spacing-lg) 0;

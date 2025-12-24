@@ -562,12 +562,12 @@ ul {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 0.75rem 1rem;
-    border-radius: 50px;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    box-shadow: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -577,14 +577,14 @@ ul {
 }
 
 .hero-card:hover {
-    background: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .hero-card i {
     font-size: 1.1rem;
-    color: var(--primary-orange);
+    color: #ffffff;
 }
 
 .hero-card p {
@@ -592,7 +592,7 @@ ul {
     font-size: 0.8rem;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
-    color: var(--text-dark);
+    color: #ffffff;
     line-height: 1.2;
 }
 

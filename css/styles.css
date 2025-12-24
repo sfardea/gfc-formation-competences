@@ -260,13 +260,13 @@ ul {
 }
 
 .logo-groupe-text {
-    font-family: 'Sacramento', cursive !important;
-    font-size: 1.5rem !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.8rem !important;
     font-weight: bolder !important;
     color: #464646 !important;
     letter-spacing: 0.5px !important;
     text-transform: capitalize !important;
-    margin-bottom: -10px !important;
+    margin-top: -3px !important;
     margin-left: 2px !important;
 }
 
@@ -1952,10 +1952,10 @@ ul {
     }
     
     .logo-groupe-text {
-        font-size: 1.4rem !important;
+        font-size: 0.7rem !important;
         letter-spacing: 0.5px !important;
         margin-left: 2px !important;
-        margin-bottom: -10px !important;
+        margin-top: -3px !important;
     }
     
     .logo-svg {
@@ -2038,10 +2038,10 @@ ul {
 
 @media (max-width: 480px) {
     .logo-groupe-text {
-        font-size: 1.1rem !important;
+        font-size: 0.6rem !important;
         letter-spacing: 0.3px !important;
         margin-left: 2px !important;
-        margin-bottom: -9px !important;
+        margin-top: -3px !important;
     }
     
     .logo-svg {

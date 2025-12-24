@@ -68,6 +68,13 @@ export class BilanCompetencesPage extends Component {
                     </div>
                 </section>
 
+                <!-- Wave transition -->
+                <div class="wave-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,0 C300,100 600,20 900,60 L900,120 L0,120 Z" class="wave-yellow"></path>
+                    </svg>
+                </div>
+
                 <!-- Ce que fait concrètement Formation Compétences -->
                 <section class="what-we-do" id="methode">
                     <div class="container">
@@ -111,6 +118,13 @@ export class BilanCompetencesPage extends Component {
                     </div>
                 </section>
 
+                <!-- Wave transition -->
+                <div class="wave-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,40 C200,80 400,20 600,50 C800,80 1000,30 1200,60 L1200,120 L0,120 Z" class="wave-light-blue"></path>
+                    </svg>
+                </div>
+
                 <!-- Témoignages -->
                 <section class="testimonials" id="temoignages">
                     <div class="container">
@@ -149,6 +163,13 @@ export class BilanCompetencesPage extends Component {
                         </div>
                     </div>
                 </section>
+
+                <!-- Wave transition -->
+                <div class="wave-divider">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M0,60 C300,20 600,90 900,50 C1050,30 1150,70 1200,50 L1200,120 L0,120 Z" class="wave-white"></path>
+                    </svg>
+                </div>
 
                 <!-- CTA Final + Formulaire -->
                 <section class="final-cta" id="contact">

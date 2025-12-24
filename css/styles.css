@@ -1535,6 +1535,37 @@ ul {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Footer Social Links */
+.footer-social {
+    margin-top: var(--spacing-md);
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.social-link.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
 /* Footer Certification Qualiopi */
 .footer-certification h5 {
     color: white;

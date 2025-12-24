@@ -36,6 +36,11 @@ export class Footer extends Component {
                                 </div>
                             </div>
                             <p>Votre partenaire pour une reconversion réussie</p>
+                            <div class="footer-social">
+                                <a href="https://www.linkedin.com/company/groupe-formation-compétences" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="Suivez-nous sur LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="footer-links">
                             <h5>Liens utiles</h5>

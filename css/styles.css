@@ -262,7 +262,7 @@ ul {
 .logo-groupe-text {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-size: 0.8rem !important;
-    font-weight: bolder !important;
+    font-weight: 400 !important;
     color: #464646 !important;
     letter-spacing: 0.5px !important;
     text-transform: capitalize !important;

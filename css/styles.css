@@ -231,8 +231,9 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: white; /* Fond blanc */
-    background: linear-gradient(#1b36723d, #2e6fff3d), white; /* Bleu transparent par-dessus blanc */
+    background: #8aaeffa6; /* Fond bleu semi-transparent */
+    backdrop-filter: blur(10px); /* Effet de flou derrière la navbar */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: var(--spacing-lg) 0;

@@ -25,9 +25,9 @@
    Les waves ont la couleur de la section qui SUIT
    =========================================== */
 
-/* Section "Ce que nous proposons" - fond blanc */
+/* Section "Ce que nous proposons" - fond jaune */
 .wave-what-we-do {
-    fill: #ffffff;
+    fill: #fff8dc;
 }
 
 /* Section "Une méthode en 3 temps" - fond blanc */

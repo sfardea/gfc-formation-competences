@@ -886,25 +886,31 @@ ul {
 .method-card {
     background: white;
     padding: 2rem;
-    border-radius: 16px;
-    border-top: 4px solid var(--primary-orange); /* Bordure orange en haut */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    border-radius: 28px 32px 30px 34px; /* Coins irréguliers effet sketched */
+    border: 3px solid var(--primary-orange);
+    box-shadow: 5px 5px 0px rgba(255, 106, 74, 0.25); /* Ombre cartoon */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bounce effect */
     position: relative;
     overflow: visible;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(-1deg); /* Rotation légère */
 }
 
-/* Couleurs de bordures différentes pour chaque carte */
+/* Rotations alternées pour effet plus fun */
 #method-card-1 {
-    border-top-color: #ff6a4a; /* Rouge/Orange */
+    transform: rotate(-1deg);
 }
 
 #method-card-2 {
-    border-top-color: #0891b2; /* Cyan/Turquoise */
+    transform: rotate(1deg);
+    border-color: #0891b2; /* Cyan/Turquoise */
+    box-shadow: 5px 5px 0px rgba(8, 145, 178, 0.25);
 }
 
 #method-card-3 {
-    border-top-color: #10b981; /* Vert */
+    transform: rotate(-0.5deg);
+    border-color: #10b981; /* Vert */
+    box-shadow: 5px 5px 0px rgba(16, 185, 129, 0.25);
 }
 
 .method-card::before {
@@ -922,13 +928,16 @@ ul {
 }
 
 .method-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(255, 106, 74, 0.15),
-                0 10px 30px rgba(43, 51, 94, 0.1);
+    transform: translateY(-8px) rotate(0deg) scale(1.05); /* Redresse et agrandit */
+    box-shadow: 7px 7px 0px rgba(255, 106, 74, 0.35); /* Ombre cartoon plus grande */
 }
 
-.method-card:hover::before {
-    opacity: 0.1;
+#method-card-2:hover {
+    box-shadow: 7px 7px 0px rgba(8, 145, 178, 0.35);
+}
+
+#method-card-3:hover {
+    box-shadow: 7px 7px 0px rgba(16, 185, 129, 0.35);
 }
 
 .card-icon {
@@ -1158,13 +1167,23 @@ ul {
 }
 
 .testimonial-card {
-    background: linear-gradient(135deg, rgba(255, 106, 74, 0.05), rgba(43, 51, 94, 0.03));
+    background: white;
     padding: var(--spacing-lg);
-    border-radius: 16px;
-    border: 1px solid rgba(43, 51, 94, 0.08);
-    box-shadow: 0 4px 20px rgba(43, 51, 94, 0.06);
-    transition: all 0.3s ease;
+    border-radius: 32px 28px 30px 34px; /* Coins irréguliers effet sketched */
+    border: 3px solid var(--primary-blue);
+    box-shadow: 5px 5px 0px rgba(43, 51, 94, 0.2); /* Ombre cartoon */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(0.5deg); /* Rotation légère */
+}
+
+.testimonial-card:nth-child(odd) {
+    transform: rotate(-0.5deg);
+}
+
+.testimonial-card:nth-child(even) {
+    transform: rotate(1deg);
 }
 
 .testimonial-card::after {
@@ -1179,9 +1198,9 @@ ul {
 }
 
 .testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(43, 51, 94, 0.12);
-    background: linear-gradient(135deg, rgba(255, 106, 74, 0.08), rgba(43, 51, 94, 0.05));
+    transform: translateY(-8px) rotate(0deg) scale(1.03); /* Redresse et agrandit */
+    box-shadow: 7px 7px 0px rgba(43, 51, 94, 0.3); /* Ombre cartoon plus grande */
+    background: linear-gradient(135deg, #f8fafc, white);
 }
 
 .testimonial-header {
@@ -1367,13 +1386,21 @@ ul {
 .contact-form-wrapper {
     max-width: 600px;
     margin: 0 auto;
-    background: linear-gradient(135deg, white, rgba(255, 106, 74, 0.02));
+    background: white;
     padding: var(--spacing-xl);
-    border-radius: 20px;
-    border: 2px solid rgba(255, 106, 74, 0.1);
-    box-shadow: 0 20px 50px rgba(43, 51, 94, 0.1);
+    border-radius: 35px 30px 33px 28px; /* Coins irréguliers effet sketched */
+    border: 3px solid var(--primary-orange);
+    box-shadow: 6px 6px 0px rgba(255, 106, 74, 0.3); /* Ombre cartoon */
     position: relative;
     z-index: 2;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(-0.5deg); /* Rotation légère fun */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.contact-form-wrapper:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 8px 8px 0px rgba(255, 106, 74, 0.35);
 }
 
 .contact-form-wrapper h3 {
@@ -1921,10 +1948,18 @@ ul {
 .cta-benefits {
     background: white;
     padding: var(--spacing-xl);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(43, 51, 94, 0.08);
-    border: 1px solid rgba(43, 51, 94, 0.05);
+    border-radius: 30px 34px 28px 32px; /* Coins irréguliers effet sketched */
+    box-shadow: 5px 5px 0px rgba(43, 51, 94, 0.2); /* Ombre cartoon */
+    border: 3px solid var(--primary-blue);
     margin-bottom: var(--spacing-xl);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(-0.5deg);
+    transition: all 0.3s ease;
+}
+
+.cta-benefits:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 7px 7px 0px rgba(43, 51, 94, 0.25);
 }
 
 .cta-benefits h3 {
@@ -1985,9 +2020,17 @@ ul {
     margin: 0 auto;
     background: white;
     padding: var(--spacing-xl);
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(43, 51, 94, 0.08);
-    border: 1px solid rgba(43, 51, 94, 0.05);
+    border-radius: 32px 28px 34px 30px; /* Coins irréguliers effet sketched */
+    box-shadow: 5px 5px 0px rgba(43, 51, 94, 0.2); /* Ombre cartoon */
+    border: 3px solid var(--primary-blue);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(0.5deg);
+    transition: all 0.3s ease;
+}
+
+.financing-content:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 7px 7px 0px rgba(43, 51, 94, 0.25);
 }
 
 .financing-content ul {
@@ -2143,66 +2186,68 @@ ul {
 }
 
 .step-card {
-    border-radius: 16px;
+    border-radius: 30px 34px 32px 28px; /* Coins irréguliers effet sketched */
     padding: var(--spacing-lg);
     padding-top: calc(var(--spacing-lg) + 30px); /* Espace pour le chiffre au-dessus */
     position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.15); /* Ombre cartoon */
+    border: 3px solid transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(-0.5deg); /* Rotation légère */
 }
 
 /* Première carte - Bleu doux */
 #step-card-1 {
     background: linear-gradient(135deg, #e6f2ff, #cce7ff);
-    border-color: rgba(122, 171, 255, 0.3);
+    border-color: #4a90e2;
+    transform: rotate(-1deg);
 }
 
 #step-card-1:hover {
     background: linear-gradient(135deg, #d4e8ff, #b3daff);
-    box-shadow: 0 12px 40px rgba(122, 171, 255, 0.25);
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(122, 171, 255, 0.5);
+    box-shadow: 6px 6px 0px rgba(74, 144, 226, 0.35); /* Ombre cartoon bleue */
+    transform: translateY(-8px) rotate(0deg) scale(1.03);
 }
 
 #step-card-1 .step-number {
-    background: var(--primary-orange); /* Rouge du site */
+    background: var(--primary-orange);
     color: white;
 }
 
 /* Deuxième carte - Vert menthe */
 #step-card-2 {
     background: linear-gradient(135deg, #e6fff2, #ccffe5);
-    border-color: rgba(140, 255, 197, 0.3);
+    border-color: #10b981;
+    transform: rotate(1deg);
 }
 
 #step-card-2:hover {
     background: linear-gradient(135deg, #d4ffea, #b3ffd9);
-    box-shadow: 0 12px 40px rgba(140, 255, 197, 0.35);
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(140, 255, 197, 0.5);
+    box-shadow: 6px 6px 0px rgba(16, 185, 129, 0.35); /* Ombre cartoon verte */
+    transform: translateY(-8px) rotate(0deg) scale(1.03);
 }
 
 #step-card-2 .step-number {
-    background: var(--primary-orange); /* Rouge du site */
+    background: var(--primary-orange);
     color: white;
 }
 
 /* Troisième carte - Corail doux */
 #step-card-3 {
     background: linear-gradient(135deg, #fff0e6, #ffe4d1);
-    border-color: rgba(255, 160, 122, 0.3);
+    border-color: #ff8a65;
+    transform: rotate(-0.75deg);
 }
 
 #step-card-3:hover {
     background: linear-gradient(135deg, #ffe8d4, #ffd6b3);
-    box-shadow: 0 12px 40px rgba(255, 160, 122, 0.35);
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(255, 160, 122, 0.5);
+    box-shadow: 6px 6px 0px rgba(255, 138, 101, 0.35); /* Ombre cartoon corail */
+    transform: translateY(-8px) rotate(0deg) scale(1.03);
 }
 
 #step-card-3 .step-number {
-    background: var(--primary-orange); /* Rouge du site */
+    background: var(--primary-orange);
     color: white;
 }
 

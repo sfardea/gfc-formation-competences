@@ -41,9 +41,18 @@ export class VaePage extends Component {
                         <h2 class="section-title fade-in">Témoignages VAE</h2>
                         <p class="section-subtitle slide-up">Des parcours de réussite avec notre accompagnement</p>
                         
-                        <div class="testimonials-grid">
-                            ${this.renderVaeTestimonials()}
+                        <div class="testimonials-carousel">
+                            <button class="carousel-btn carousel-btn-prev" aria-label="Précédent">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="testimonials-track">
+                                ${this.renderVaeTestimonials()}
+                            </div>
+                            <button class="carousel-btn carousel-btn-next" aria-label="Suivant">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
                         </div>
+                        <div class="carousel-dots"></div>
                     </div>
                 </section>
 
@@ -259,5 +268,58 @@ export class VaePage extends Component {
 
     onMount() {
         console.log('VaePage montée');
+        this.initCarousel();
+    }
+    
+    initCarousel() {
+        const track = this.find('.testimonials-track');
+        const prevBtn = this.find('.carousel-btn-prev');
+        const nextBtn = this.find('.carousel-btn-next');
+        const cards = this.findAll('.vae-testimonial');
+        const dotsContainer = this.find('.carousel-dots');
+        
+        if (!track || !cards.length) return;
+        
+        let currentIndex = 0;
+        const cardWidth = cards[0].offsetWidth + 32; // largeur + gap
+        
+        // Créer les dots
+        cards.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        
+        const updateDots = () => {
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        };
+        
+        const goToSlide = (index) => {
+            currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            updateDots();
+        };
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) goToSlide(currentIndex - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < cards.length - 1) goToSlide(currentIndex + 1);
+        });
+        
+        // Défilement automatique toutes les 5 secondes
+        setInterval(() => {
+            if (currentIndex < cards.length - 1) {
+                goToSlide(currentIndex + 1);
+            } else {
+                goToSlide(0); // Retour au début
+            }
+        }, 5000);
     }
 }

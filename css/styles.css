@@ -554,12 +554,12 @@ ul {
 }
 
 .hero-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
     padding: 1rem 1.25rem;
-    border-radius: 12px;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -567,9 +567,9 @@ ul {
 }
 
 .hero-card:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.8);
+    background: #ffffff;
     transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hero-card i {
@@ -582,7 +582,7 @@ ul {
     font-size: 0.85rem;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text-dark);
     line-height: 1.3;
 }
 

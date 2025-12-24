@@ -1379,6 +1379,10 @@ ul {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+.hero-banner-content .text-orange {
+    color: var(--primary-orange);
+}
+
 /* ========================================
    Témoignages
    ======================================== */

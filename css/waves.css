@@ -13,6 +13,12 @@
     margin-bottom: -1px;
 }
 
+.wave-flip {
+    transform: scaleY(-1);
+    margin-bottom: 0;
+    margin-top: -1px;
+}
+
 .wave-divider svg {
     display: block;
     width: 100%;
@@ -33,6 +39,11 @@
 /* Section "Une méthode en 3 temps" - fond blanc */
 .wave-method {
     fill: #ffffff;
+}
+
+/* Wave jaune inversée (bas de section what-we-do) */
+.wave-yellow-bottom {
+    fill: #fff8dc;
 }
 
 /* Section Témoignages - fond rosé très léger rgba(255, 106, 74, 0.03) */

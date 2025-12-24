@@ -103,10 +103,10 @@ export class HomePage extends Component {
                     </div>
                 </section>
 
-                <!-- Wave → Section method (fond blanc) -->
-                <div class="wave-divider">
+                <!-- Wave jaune inversée (fin section what-we-do) -->
+                <div class="wave-divider wave-flip">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,80 C200,30 400,90 600,50 C800,10 1000,70 1200,40 L1200,120 L0,120 Z" class="wave-method"></path>
+                        <path d="M0,60 C300,20 600,100 1200,40 L1200,0 L0,0 Z" class="wave-yellow-bottom"></path>
                     </svg>
                 </div>
 

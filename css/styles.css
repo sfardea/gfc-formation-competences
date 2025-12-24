@@ -1349,7 +1349,7 @@ ul {
     padding: calc(var(--spacing-2xl) * 1.5) 0;
     margin-top: 0;
     background: linear-gradient(180deg, 
-        rgba(255, 106, 74, 0.15) 0%, 
+        rgba(43, 50, 94, 0.12) 0%, 
         #ffffff 33%,
         #ffffff 100%);
 }

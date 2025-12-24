@@ -231,7 +231,8 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: #2e6fff; /* Bleu opaque */
+    background: white; /* Fond blanc */
+    background: linear-gradient(#1b36723d, #2e6fff3d), white; /* Bleu transparent par-dessus blanc */
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: var(--spacing-lg) 0;
@@ -285,7 +286,7 @@ ul {
 }
 
 .nav-menu a {
-    color: white; /* Blanc sur fond bleu */
+    color: var(--text-dark); /* Texte foncé sur fond bleu pastel */
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -293,7 +294,7 @@ ul {
 }
 
 .nav-menu a:hover {
-    color: rgba(255, 255, 255, 0.8); /* Blanc légèrement transparent au hover */
+    color: var(--primary-blue); /* Bleu foncé au hover */
 }
 
 /* Dropdown Menu Styles */

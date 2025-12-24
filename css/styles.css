@@ -2702,3 +2702,7 @@ ul {
     font-size: 1.2rem;
     line-height: 1.6;
 }
+
+.step-result-label {
+    color: var(--primary-blue);
+}

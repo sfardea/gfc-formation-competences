@@ -259,7 +259,7 @@ export class HomePage extends Component {
                 <ul>
                     ${step.content.map(item => `<li>${item}</li>`).join('')}
                 </ul>
-                <p class="step-result"><strong>${step.result}</strong></p>
+                <p class="step-result"><strong>${step.result.replace(/^(Objectif|Résultat) :/, '<span class="step-result-label">$1 :</span>')}</strong></p>
             </div>
         `).join('');
     }

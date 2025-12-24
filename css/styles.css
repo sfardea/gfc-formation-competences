@@ -231,7 +231,7 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: white;
+    background: #2e6fff3d;
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     padding: var(--spacing-lg) 0;
@@ -286,6 +286,7 @@ ul {
 
 .nav-menu a {
     color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     padding: var(--spacing-xs) var(--spacing-sm);
     transition: var(--transition);

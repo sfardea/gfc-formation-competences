@@ -127,11 +127,12 @@ ul {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    border: none;
-    border-radius: 8px;
+    border: 3px solid transparent;
+    border-radius: 25px 28px 26px 29px; /* Coins irréguliers */
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     text-decoration: none;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15); /* Ombre cartoon */
 }
 
 .btn-lg {
@@ -142,15 +143,15 @@ ul {
 .btn-primary {
     background: var(--primary-orange);
     color: white;
-    box-shadow: 0 4px 14px rgba(255, 106, 74, 0.25);
-    transition: all 0.3s ease;
+    border-color: var(--primary-orange-dark);
+    box-shadow: 4px 4px 0px rgba(255, 106, 74, 0.3);
 }
 
 .btn-primary:hover {
     background: var(--primary-orange-dark);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 106, 74, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0px rgba(255, 106, 74, 0.4); /* Ombre cartoon plus grande */
 }
 
 /* Section CTAs */
@@ -167,18 +168,18 @@ ul {
 
 /* Orange CTA Buttons (Contact/Form) */
 .btn-orange {
-    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light));
+    background: var(--primary-orange);
     color: white;
     font-weight: 600;
-    box-shadow: 0 4px 14px rgba(255, 106, 74, 0.25);
-    transition: all 0.3s ease;
+    border-color: var(--primary-orange-dark);
+    box-shadow: 4px 4px 0px rgba(255, 106, 74, 0.3);
 }
 
 .btn-orange:hover {
-    background: linear-gradient(135deg, var(--primary-orange-dark), var(--primary-orange));
+    background: var(--primary-orange-dark);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(255, 106, 74, 0.35);
+    box-shadow: 6px 6px 0px rgba(255, 106, 74, 0.4);
 }
 
 /* Form Submit Button - Orange */
@@ -205,16 +206,15 @@ ul {
 .btn-secondary {
     background: var(--primary-blue);
     color: white;
-    border: none;
-    box-shadow: 0 4px 14px rgba(43, 51, 94, 0.25);
-    transition: all 0.3s ease;
+    border-color: var(--primary-blue-dark);
+    box-shadow: 4px 4px 0px rgba(43, 51, 94, 0.3);
 }
 
 .btn-secondary:hover {
     background: var(--primary-blue-dark);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(43, 51, 94, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0px rgba(43, 51, 94, 0.4);
 }
 
 .btn-block {
@@ -1443,15 +1443,14 @@ ul {
 .form-group select,
 .form-group textarea {
     padding: 0.875rem 1.25rem;
-    border: 2px solid rgba(43, 51, 94, 0.1);
-    border-radius: 12px;
+    border: 2px solid rgba(43, 51, 94, 0.15);
+    border-radius: 18px 16px 17px 19px; /* Coins légèrement irréguliers */
     font-size: 1rem;
-    font-family: var(--font-primary);
-    background-color: rgba(255, 255, 255, 0.95);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: white;
     box-sizing: border-box;
     width: 100%;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(43, 51, 94, 0.04);
 }
 
 .form-group textarea::placeholder {
@@ -1464,8 +1463,9 @@ ul {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-orange);
+    border-width: 3px;
     background-color: white;
-    box-shadow: 0 0 0 4px rgba(255, 106, 74, 0.1), 0 4px 12px rgba(43, 51, 94, 0.08);
+    box-shadow: 3px 3px 0px rgba(255, 106, 74, 0.25); /* Ombre cartoon au focus */
     transform: translateY(-2px);
 }
 
@@ -1520,6 +1520,7 @@ ul {
     background: #2b325e;
     color: white;
     position: relative;
+    border-radius: 40px 45px 0 0; /* Coins irréguliers en haut seulement, pas en bas */
 }
 
 .footer::before {

@@ -2551,6 +2551,8 @@ ul {
     border: 3px solid transparent;
     font-family: 'Plus Jakarta Sans', sans-serif;
     transform: rotate(-0.5deg); /* Rotation légère */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Première carte - Bleu doux */
@@ -2723,7 +2725,7 @@ ul {
 }
 
 .step-result {
-    margin-top: var(--spacing-md);
+    margin-top: auto;
     padding-top: var(--spacing-md);
     border-top: none;
     color: var(--primary-orange);

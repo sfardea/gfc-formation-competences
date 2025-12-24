@@ -495,23 +495,49 @@ ul {
 }
 
 .hero-centered .hero-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: left;
+    max-width: 650px;
+    margin: 0;
 }
 
 .hero-video-bg .hero-title {
     color: #ffffff;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    font-size: 3rem;
+    line-height: 1.15;
 }
 
 .hero-video-bg .hero-subtitle {
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
 }
 
 .hero-video-bg .hero-cta {
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+/* Boutons plus grands dans le hero vidéo */
+.hero-video-bg .btn-lg {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.hero-video-bg .btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+}
+
+.hero-video-bg .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-blue);
+    border-color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -521,6 +547,28 @@ ul {
     
     .hero-centered .hero-content {
         padding: 0 1rem;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero-video-bg .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-video-bg .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-video-bg .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-video-bg .btn-lg {
+        padding: 1rem 2rem;
+        width: 100%;
+        max-width: 320px;
     }
 }
 

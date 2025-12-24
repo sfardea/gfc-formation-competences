@@ -287,7 +287,8 @@ ul {
 }
 
 .nav-menu a {
-    color: var(--text-dark); /* Texte foncé sur fond bleu pastel */
+    /* color: var(--text-dark); Texte foncé sur fond bleu pastel */
+    color: #000000;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     padding: var(--spacing-xs) var(--spacing-sm);
@@ -686,7 +687,8 @@ ul {
 .what-we-do {
     margin-top: 5rem;
     padding: 0 0 var(--spacing-2xl) 0; /* Supprime le padding top pour rapprocher du hero */
-    background: var(--bg-white);
+    /* background: var(--bg-white); */
+    background: #ffe74461
 }
 
 .intro-text {
@@ -2092,7 +2094,7 @@ ul {
    ======================================== */
 .what-we-do {
     padding: calc(var(--spacing-2xl) * 1.5) 0;
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    /* background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); */
 }
 
 .section-header {

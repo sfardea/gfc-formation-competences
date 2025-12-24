@@ -111,9 +111,9 @@ ul {
    Container
    ======================================== */
 .container {
-    max-width: 1200px;
+    max-width: 1600px; /* Élargi pour plus d'espace */
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-xl); /* Plus de padding sur les côtés */
 }
 
 /* ========================================
@@ -553,16 +553,22 @@ ul {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: var(--spacing-md);
     animation: fadeInUp 0.8s ease;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--text-dark);
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: var(--spacing-lg);
-    opacity: 0.95;
+    opacity: 1;
     animation: fadeInUp 0.8s ease 0.2s both;
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .hero-cta {
@@ -1122,8 +1128,11 @@ ul {
    Témoignages
    ======================================== */
 .testimonials {
-    padding: var(--spacing-2xl) 0;
-    background: #ffffff;
+    padding: calc(var(--spacing-2xl) * 1.5) 0;
+    background: linear-gradient(180deg, 
+        rgba(255, 106, 74, 0.03) 0%, 
+        rgba(43, 51, 94, 0.02) 50%,
+        #ffffff 100%);
 }
 
 .testimonials-grid {
@@ -1821,6 +1830,45 @@ ul {
 }
 
 /* ========================================
+   Badges/Tags colorés
+   ======================================== */
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.badge-orange {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light));
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 106, 74, 0.25);
+}
+
+.badge-blue {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    color: white;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.25);
+}
+
+.badge-purple {
+    background: linear-gradient(135deg, #9333ea, #7e22ce);
+    color: white;
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.25);
+}
+
+.badge-green {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+/* ========================================
    CTA Benefits Section
    ======================================== */
 .cta-benefits {
@@ -1998,13 +2046,16 @@ ul {
    Styles additionnels pour sections
    ======================================== */
 .what-we-do {
-    padding: var(--spacing-2xl) 0;
-    background-color: #ffffff;
+    padding: calc(var(--spacing-2xl) * 1.5) 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-intro {

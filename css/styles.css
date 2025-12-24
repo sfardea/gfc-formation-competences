@@ -2480,7 +2480,7 @@ ul {
 }
 
 .need-highlight {
-    background: rgba(255, 106, 74, 0.08);
+    background: rgba(255, 106, 74, 0.12);
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: 16px;
     border-left: 4px solid var(--primary-orange);

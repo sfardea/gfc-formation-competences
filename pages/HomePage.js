@@ -125,7 +125,15 @@ export class HomePage extends Component {
                     </div>
                 </section>
 
-                <!-- Témoignages (collé à method, le gradient fait la transition) -->
+                <!-- Banderole avec image hero -->
+                <section class="hero-banner">
+                    <div class="hero-banner-overlay"></div>
+                    <div class="hero-banner-content">
+                        <p>Chaque parcours est unique. Le vôtre commence ici.</p>
+                    </div>
+                </section>
+
+                <!-- Témoignages -->
                 <section class="testimonials" id="temoignages">
                     <div class="container">
                         <h2 class="section-title fade-in">Témoignages</h2>

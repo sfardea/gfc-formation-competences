@@ -1342,6 +1342,44 @@ ul {
 }
 
 /* ========================================
+   Hero Banner (Banderole)
+   ======================================== */
+.hero-banner {
+    position: relative;
+    height: 200px;
+    background: url('/assets/images/hero.png') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(43, 50, 94, 0.6);
+}
+
+.hero-banner-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 var(--spacing-lg);
+}
+
+.hero-banner-content p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
    Témoignages
    ======================================== */
 .testimonials {

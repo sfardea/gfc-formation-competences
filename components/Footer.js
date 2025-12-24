@@ -40,11 +40,6 @@ export class Footer extends Component {
                                 <p><i class="fas fa-envelope"></i> <a href="mailto:contact@groupe-formation-competences.fr">contact@groupe-formation-competences.fr</a></p>
                                 <p><i class="fas fa-map-marker-alt"></i> 16 rue Cuvier, 69006 Lyon</p>
                             </div>
-                            <div class="footer-social">
-                                <a href="https://www.linkedin.com/company/groupe-formation-compétences" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="Suivez-nous sur LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
                         </div>
                         <div class="footer-links">
                             <h5>Liens utiles</h5>
@@ -72,6 +67,9 @@ export class Footer extends Component {
                     </div>
                     <div class="footer-bottom">
                         <p>&copy; ${new Date().getFullYear()} Groupe Formation Compétences. Tous droits réservés.</p>
+                        <a href="https://www.linkedin.com/company/groupe-formation-compétences" target="_blank" rel="noopener noreferrer" class="footer-linkedin" title="Suivez-nous sur LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
             </footer>

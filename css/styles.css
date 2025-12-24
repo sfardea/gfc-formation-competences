@@ -2491,6 +2491,7 @@ ul {
     border-left: none;
     margin-top: var(--spacing-sm);
     color: var(--primary-blue) !important;
+    font-weight: 700;
 }
 
 .need-highlight strong {

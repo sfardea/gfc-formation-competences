@@ -2587,15 +2587,29 @@ ul {
 
 /* Deuxième carte - Vert menthe */
 #step-card-2 {
-    background: linear-gradient(135deg, #e6fff2, #ccffe5);
-    border-color: #10b981;
+    background: #ffffff;
+    border-color: #2b325e;
     transform: rotate(1deg);
+    color: #2b325e;
 }
 
 #step-card-2:hover {
-    background: linear-gradient(135deg, #d4ffea, #b3ffd9);
-    box-shadow: 6px 6px 0px rgba(16, 185, 129, 0.35);
+    background: #fafafa;
+    box-shadow: 6px 6px 0px rgba(43, 50, 94, 0.35);
     transform: translateY(-8px) rotate(0deg) scale(1.03);
+}
+
+#step-card-2 .step-title,
+#step-card-2 li {
+    color: #2b325e;
+}
+
+#step-card-2 .step-result {
+    color: var(--primary-orange);
+}
+
+#step-card-2 li:before {
+    color: #2b325e;
 }
 
 #step-card-2 .step-number {
@@ -2605,15 +2619,29 @@ ul {
 
 /* Troisième carte - Corail doux */
 #step-card-3 {
-    background: linear-gradient(135deg, #fff0e6, #ffe4d1);
-    border-color: #ff8a65;
+    background: #ffffff;
+    border-color: #2b325e;
     transform: rotate(-0.75deg);
+    color: #2b325e;
 }
 
 #step-card-3:hover {
-    background: linear-gradient(135deg, #ffe8d4, #ffd6b3);
-    box-shadow: 6px 6px 0px rgba(255, 138, 101, 0.35);
+    background: #fafafa;
+    box-shadow: 6px 6px 0px rgba(43, 50, 94, 0.35);
     transform: translateY(-8px) rotate(0deg) scale(1.03);
+}
+
+#step-card-3 .step-title,
+#step-card-3 li {
+    color: #2b325e;
+}
+
+#step-card-3 .step-result {
+    color: var(--primary-orange);
+}
+
+#step-card-3 li:before {
+    color: #2b325e;
 }
 
 #step-card-3 .step-number {

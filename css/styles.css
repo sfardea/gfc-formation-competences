@@ -2568,9 +2568,12 @@ ul {
 }
 
 #step-card-1 .step-title,
-#step-card-1 li,
-#step-card-1 .step-result {
+#step-card-1 li {
     color: #2b325e;
+}
+
+#step-card-1 .step-result {
+    color: var(--primary-orange);
 }
 
 #step-card-1 li:before {
@@ -2694,8 +2697,8 @@ ul {
     border-top: none;
     color: var(--primary-orange);
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     line-height: 1.6;
 }

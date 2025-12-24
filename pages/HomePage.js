@@ -70,7 +70,7 @@ export class HomePage extends Component {
                 <!-- Wave transition -->
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0 C300,100 600,20 900,60 L900,120 L0,120 Z" class="wave-yellow"></path>
+                        <path d="M0,0 C300,100 600,20 900,60 C1050,80 1150,40 1200,50 L1200,120 L0,120 Z" class="wave-yellow"></path>
                     </svg>
                 </div>
 

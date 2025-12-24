@@ -180,6 +180,7 @@ export class HomePage extends Component {
         const steps = [
             {
                 number: 1,
+                icon: "fa-user-circle",
                 title: "Comprendre votre situation",
                 content: [
                     "Vous n'êtes pas qu'un CV : Nous reprenons votre contexte actuel, votre parcours et vos transitions passées.",
@@ -190,6 +191,7 @@ export class HomePage extends Component {
             },
             {
                 number: 2,
+                icon: "fa-lightbulb",
                 title: "Vous aider à y voir clair (pour de vrai)",
                 content: [
                     "cadrons votre besoin réel : quel type d'accompagnement pour quel objectif ?",
@@ -200,6 +202,7 @@ export class HomePage extends Component {
             },
             {
                 number: 3,
+                icon: "fa-route",
                 title: "Vous orienter vers le bon dispositif et le bon partenaire",
                 content: [
                     "nous formalisons vos critères de choix (objectifs, modalités, timing, contraintes)",
@@ -213,6 +216,9 @@ export class HomePage extends Component {
         return steps.map((step, index) => `
             <div class="step-card slide-up" id="step-card-${index + 1}">
                 <div class="step-number">${step.number}</div>
+                <div class="step-icon">
+                    <i class="fas ${step.icon}"></i>
+                </div>
                 <h3>${step.title}</h3>
                 <ul>
                     ${step.content.map(item => `<li>${item}</li>`).join('')}

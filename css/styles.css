@@ -2207,6 +2207,19 @@ ul {
     /* Ombre supprimée */
 }
 
+.step-icon {
+    font-size: 3rem;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
 .step-card h3 {
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-sm);

@@ -2310,7 +2310,7 @@ ul {
    ======================================== */
 .financing {
     padding: var(--spacing-2xl) 0;
-    background: linear-gradient(135deg, rgba(43, 51, 94, 0.02), rgba(255, 106, 74, 0.03));
+    background: #cbffea;
 }
 
 .financing-content {

@@ -1714,7 +1714,7 @@ ul {
    ======================================== */
 .footer {
     padding: var(--spacing-xl) 0 var(--spacing-lg);
-    background: #2b325e;
+    background: #2e3b63;
     color: white;
     position: relative;
     border-radius: 0;

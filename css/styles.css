@@ -231,7 +231,7 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: #ffffffd9; /* Fond blanc plus opaque (85%) */
+    background: #ffffffa6; /* Fond blanc semi-transparent */
     backdrop-filter: blur(10px); /* Effet de flou derrière la navbar */
     -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
     box-shadow: var(--shadow-sm);
@@ -257,6 +257,9 @@ ul {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 8px 12px;
+    border-radius: 12px;
 }
 
 .logo-groupe-text {

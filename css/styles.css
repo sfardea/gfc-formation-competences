@@ -584,7 +584,7 @@ ul {
 
 .hero-card i {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: var(--primary-orange);
 }
 
 .hero-card p {

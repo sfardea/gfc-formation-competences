@@ -89,7 +89,7 @@ export class VaePage extends Component {
                 <!-- Wave divider -->
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0 C300,100 600,20 1200,60 L1200,120 L0,120 Z" class="wave-what-we-do"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-what-we-do"></path>
                     </svg>
                 </div>
 
@@ -120,7 +120,7 @@ export class VaePage extends Component {
                 <!-- Wave inverted -->
                 <div class="wave-divider wave-inverted">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,40 C200,70 400,10 600,50 C800,90 1000,30 1200,80 L1200,0 L0,0 Z" class="wave-yellow-inverted"></path>
+                        <path d="M0,80 C300,30 900,30 1200,80 L1200,0 L0,0 Z" class="wave-yellow-inverted"></path>
                     </svg>
                 </div>
 
@@ -239,7 +239,7 @@ export class VaePage extends Component {
                 <!-- Wave → Section financing (fond grisé léger) -->
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,20 C150,80 350,10 500,60 C700,100 900,30 1200,70 L1200,120 L0,120 Z" class="wave-financing"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-financing"></path>
                     </svg>
                 </div>
 
@@ -350,7 +350,7 @@ export class VaePage extends Component {
                 <!-- Wave → Section contact (fond blanc) -->
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,60 C300,20 600,90 900,50 C1050,30 1150,70 1200,50 L1200,120 L0,120 Z" class="wave-contact"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-contact"></path>
                     </svg>
                 </div>
 
@@ -398,7 +398,7 @@ export class VaePage extends Component {
                 <!-- Wave → Footer -->
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,60 C300,20 600,90 900,50 C1050,30 1150,70 1200,50 L1200,120 L0,120 Z" class="wave-footer"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-footer"></path>
                     </svg>
                 </div>
             </div>

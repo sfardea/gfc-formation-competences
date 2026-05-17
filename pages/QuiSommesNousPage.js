@@ -46,7 +46,7 @@ export class QuiSommesNousPage extends Component {
 
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,0 C300,100 600,20 1200,60 L1200,120 L0,120 Z" class="wave-what-we-do"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-what-we-do"></path>
                     </svg>
                 </div>
 
@@ -92,7 +92,7 @@ export class QuiSommesNousPage extends Component {
                         <i class="fas fa-quote-left banner-quote-icon"></i>
                         <p><span class="text-orange">Réseau d'organismes certifiés Qualiopi.</span> Avis clients vérifiés.</p>
                         <i class="fas fa-quote-right banner-quote-icon"></i>
-                    </svg>
+                    </div>
                     <svg class="banner-wave-bottom" viewBox="0 0 1200 80" preserveAspectRatio="none">
                         <path d="M0,20 C200,50 400,10 600,40 C800,70 1000,30 1200,50 L1200,80 L0,80 Z" fill="white"/>
                     </svg>
@@ -132,7 +132,7 @@ export class QuiSommesNousPage extends Component {
 
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,20 C150,80 350,10 500,60 C700,100 900,30 1200,70 L1200,120 L0,120 Z" class="wave-financing"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-what-we-do"></path>
                     </svg>
                 </div>
 
@@ -164,7 +164,7 @@ export class QuiSommesNousPage extends Component {
 
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,60 C300,20 600,90 900,50 C1050,30 1150,70 1200,50 L1200,120 L0,120 Z" class="wave-footer"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-footer"></path>
                     </svg>
                 </div>
             </div>
@@ -185,7 +185,7 @@ export class QuiSommesNousPage extends Component {
             const scrollY = window.scrollY + navbar.offsetHeight;
             if (scrollY > heroBottom - 50) {
                 navbar.classList.remove('navbar-hero');
-                navbar.classList.add('navbar-scrolled');
+                navbar.classList.remove('navbar-scrolled');
             } else {
                 navbar.classList.add('navbar-hero');
                 navbar.classList.remove('navbar-scrolled');

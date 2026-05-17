@@ -107,7 +107,7 @@ export class BlogPage extends Component {
 
                 <div class="wave-divider">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M0,60 C300,20 600,90 900,50 C1050,30 1150,70 1200,50 L1200,120 L0,120 Z" class="wave-footer"></path>
+                        <path d="M0,40 C300,90 900,90 1200,40 L1200,120 L0,120 Z" class="wave-footer"></path>
                     </svg>
                 </div>
             </div>
@@ -128,7 +128,7 @@ export class BlogPage extends Component {
             const scrollY = window.scrollY + navbar.offsetHeight;
             if (scrollY > heroBottom - 50) {
                 navbar.classList.remove('navbar-hero');
-                navbar.classList.add('navbar-scrolled');
+                navbar.classList.remove('navbar-scrolled');
             } else {
                 navbar.classList.add('navbar-hero');
                 navbar.classList.remove('navbar-scrolled');

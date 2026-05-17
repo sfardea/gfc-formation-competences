@@ -17,6 +17,28 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[0-9+\-\s().]{7,25}$/;
 const MAX_TEXT = 2000;
 
+// Mapping formType (technique, utilisé côté frontend + dataLayer)
+// → libellé Lead_Source lisible côté Zoho CRM.
+// Format : "Nom du site - Formulaire".
+// Ajouter ici toute nouvelle source de leads (et l'ajouter aussi dans
+// le picklist Lead_Source côté Zoho si celui-ci est restreint).
+const SITE_NAME = 'Formation Compétences';
+const FORM_TYPE_LABELS = {
+    'home-contact': 'Accueil',
+    'bilan-competences': 'Bilan de compétences',
+    'vae': 'VAE',
+    'formation-ia': 'Formation IA',
+    'eligibility-modal': 'Modal éligibilité',
+    'site-web': 'Autre formulaire',
+    'unknown': 'Autre formulaire',
+};
+
+function buildLeadSourceLabel(formType) {
+    const cleaned = clean(formType, 60);
+    const label = FORM_TYPE_LABELS[cleaned] || 'Autre formulaire';
+    return `${SITE_NAME} - ${label}`;
+}
+
 function clean(value, max = 200) {
     if (value === undefined || value === null) return '';
     return String(value).trim().slice(0, max);
@@ -96,7 +118,7 @@ function extractMeta(req) {
 
     const formType = clean(req.body?.formType || 'unknown', 60);
     const page = clean(req.body?.page || req.headers.referer || '', 500);
-    const sourceLabel = formType ? `Site - ${formType}` : 'Site';
+    const sourceLabel = buildLeadSourceLabel(formType);
 
     return {
         source: sourceLabel,

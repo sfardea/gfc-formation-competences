@@ -147,12 +147,32 @@ Réponse attendue :
 | `prenom` (split)    | `First_Name`        | text     |                                |
 | `email`             | `Email`             | email    |                                |
 | `phone`/`telephone` | `Phone`             | phone    |                                |
-| `formType`          | `Lead_Source`       | picklist | `Site - home`, `Site - eligibility`... |
+| `formType`          | `Lead_Source`       | picklist | Libellés lisibles via mapping (cf. tableau ci-dessous) |
 | `utm_source`        | `Source`            | text     | custom                         |
 | `utm_medium`        | `Medium`            | text     | custom                         |
 | `utm_campaign`      | `Campagne`          | text     | custom                         |
 | `page` (referer)    | `URL`               | text     | custom                         |
 | `situation`/`objectif`/`experience`/`message` | `Description` | textarea | Concaténé lisible dans la description |
+
+### Mapping des libellés `Lead_Source`
+
+Pour faciliter le tri dans Zoho, le `formType` technique envoyé par le
+frontend est transformé en libellé lisible. Le mapping vit dans
+`src/leads/validation.js` (constante `FORM_TYPE_LABELS`) :
+
+| `formType` (frontend, dataLayer)   | `Lead_Source` (Zoho)                              |
+|------------------------------------|---------------------------------------------------|
+| `home-contact`                     | `Formation Compétences - Accueil`                 |
+| `bilan-competences`                | `Formation Compétences - Bilan de compétences`    |
+| `vae`                              | `Formation Compétences - VAE`                     |
+| `formation-ia`                     | `Formation Compétences - Formation IA`            |
+| `eligibility-modal`                | `Formation Compétences - Modal éligibilité`       |
+| autre / inconnu                    | `Formation Compétences - Autre formulaire`        |
+
+Ajouter une nouvelle source : éditer `FORM_TYPE_LABELS` dans
+`src/leads/validation.js`. Si le picklist `Lead_Source` côté Zoho est
+restreint, penser à y ajouter la nouvelle valeur dans **Setup → Modules
+and Fields → Contacts → Lead Source** avant le déploiement.
 
 ⚠️ **Volontairement minimaliste** pour la validation référent. Les champs
 métier sensibles (`TYPE_DE_LEAD`, `Statut_d_appel`, `Lead_fourni_par`,

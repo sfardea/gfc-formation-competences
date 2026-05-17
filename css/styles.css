@@ -6,6 +6,10 @@
     --primary-orange: #ff6a4a;
     --primary-orange-dark: #e54f35;
     --primary-orange-light: #ff8570;
+    /* Alias pour cohérence inter-fichiers (utilisés dans spa-components.css) */
+    --color-orange: var(--primary-orange);
+    --color-orange-dark: var(--primary-orange-dark);
+    --color-orange-light: var(--primary-orange-light);
     --primary-blue: #2b325e;
     --primary-blue-dark: #1f2444;
     --primary-blue-light: #3d4573;
@@ -24,8 +28,8 @@
     --primary-color: #2b325e;
     --primary-dark: #1f2444;
     --primary-light: #3d4573;
-    --secondary-color: #ff6a4a;
-    --secondary-dark: #e55a00;
+    --secondary-color: var(--primary-orange);
+    --secondary-dark: var(--primary-orange-dark);
     
     /* Couleurs neutres améliorées */
     --text-dark: #1a1a1a;
@@ -221,7 +225,7 @@ ul {
 }
 
 .btn-form-submit:hover {
-    background: #e55a00;
+    background: var(--primary-orange-dark);
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(255, 106, 74, 0.3);
 }
@@ -2721,7 +2725,7 @@ ul {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8a65 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -3550,7 +3554,7 @@ ul {
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     color: white;
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -3592,7 +3596,7 @@ ul {
 .benefit-card .benefit-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3665,7 +3669,7 @@ ul {
 .etape-number {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -3833,7 +3837,7 @@ ul {
 .vae-step-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -3931,7 +3935,7 @@ ul {
 .engagement-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4163,7 +4167,7 @@ ul {
 .section-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4252,7 +4256,7 @@ ul {
     right: -20px;
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4323,7 +4327,7 @@ ul {
 
 /* Highlight box amélioré */
 .highlight-box {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     color: white;
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
@@ -4395,7 +4399,7 @@ ul {
 .promise-item-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4457,7 +4461,7 @@ ul {
 .etape-number {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     color: white;
     border-radius: var(--border-radius);
     display: flex;
@@ -4598,7 +4602,7 @@ ul {
 .audience-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4665,7 +4669,7 @@ ul {
 .financing-icon-main {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4843,7 +4847,7 @@ ul {
 .cta-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5074,7 +5078,7 @@ ul {
 .need-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5193,7 +5197,7 @@ ul {
     left: 20px;
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5265,7 +5269,7 @@ ul {
 }
 
 .benefit-icon-orange {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange) 100%);
 }
 
 .benefit-icon-blue {

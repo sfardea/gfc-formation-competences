@@ -6,6 +6,7 @@ export class FormationIAPage extends Component {
         super();
         this.state = {
             step: 1,
+            modalOpen: false,
             values: {
                 formation_souhaitee: '',
                 situation: '',
@@ -18,6 +19,7 @@ export class FormationIAPage extends Component {
                 consent: false,
             },
         };
+        this._handleEscape = this._handleEscape.bind(this);
     }
 
     template() {
@@ -42,10 +44,10 @@ export class FormationIAPage extends Component {
                             <h1 class="hero-title fade-in">Formez-vous aux métiers de <span class="text-accent">l'intelligence artificielle</span></h1>
                             <p class="hero-page-subtitle slide-up">Développez vos compétences en IA et préparez-vous aux métiers de demain</p>
                             <div class="hero-cta slide-up">
-                                <a href="#contact-ia" class="btn btn-primary btn-lg pulse-hover">
+                                <button type="button" class="btn btn-primary btn-lg pulse-hover ia-open-modal">
                                     <i class="fas fa-phone-alt"></i>
                                     Être rappelé(e) par un conseiller
-                                </a>
+                                </button>
                                 <a href="#domaines" class="btn btn-secondary btn-lg">
                                     <i class="fas fa-arrow-down"></i>
                                     Découvrir les formations
@@ -208,30 +210,47 @@ export class FormationIAPage extends Component {
                     </div>
                 </section>
 
-                <!-- Section : Contact CTA + Formulaire dédié IA -->
+                <!-- Section : Contact CTA (ouvre le formulaire en modal) -->
                 <section class="ia-section ia-contact" id="contact-ia">
                     <div class="container">
-                        <div class="ia-contact-grid">
-                            <div class="ia-contact-pitch">
-                                <div class="ia-contact-badge fade-in">
-                                    <i class="fas fa-rocket"></i>
-                                    <span>Démarrez votre projet IA</span>
-                                </div>
-                                <h2 class="fade-in">Prêt(e) à vous lancer dans l'<span class="text-accent">IA</span> ?</h2>
-                                <p class="slide-up">Échangez avec un conseiller pour identifier la formation la plus adaptée à votre profil, vos objectifs et vos modalités de financement.</p>
-                                <ul class="ia-contact-reassurance slide-up">
-                                    <li><i class="fas fa-check"></i> Réponse personnalisée sous 24h ouvrées</li>
-                                    <li><i class="fas fa-check"></i> Étude gratuite et sans engagement</li>
-                                    <li><i class="fas fa-check"></i> Accompagnement par notre collectif d'experts</li>
-                                </ul>
+                        <div class="ia-contact-center">
+                            <div class="ia-contact-badge fade-in">
+                                <i class="fas fa-rocket"></i>
+                                <span>Démarrez votre projet IA</span>
                             </div>
-
-                            <div class="ia-form-wrapper scale-in">
-                                ${this.renderWizard()}
+                            <h2 class="fade-in">Prêt(e) à vous lancer dans l'<span class="text-accent">IA</span> ?</h2>
+                            <p class="slide-up">Échangez avec un conseiller pour identifier la formation la plus adaptée à votre profil, vos objectifs et vos modalités de financement.</p>
+                            <ul class="ia-contact-reassurance slide-up">
+                                <li><i class="fas fa-check"></i> Réponse personnalisée sous 24h ouvrées</li>
+                                <li><i class="fas fa-check"></i> Étude gratuite et sans engagement</li>
+                                <li><i class="fas fa-check"></i> Accompagnement par notre collectif d'experts</li>
+                            </ul>
+                            <div class="ia-contact-cta scale-in">
+                                <button type="button" class="btn btn-primary btn-lg pulse-hover ia-open-modal">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Être rappelé(e) par un conseiller
+                                </button>
                             </div>
                         </div>
                     </div>
                 </section>
+
+                <!-- Modal Formulaire IA -->
+                <div class="ia-modal" id="ia-modal" role="dialog" aria-modal="true" aria-labelledby="ia-modal-title" aria-hidden="true">
+                    <div class="ia-modal-overlay" data-action="close-modal"></div>
+                    <div class="ia-modal-box">
+                        <button type="button" class="ia-modal-close" data-action="close-modal" aria-label="Fermer">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="ia-form-wrapper">
+                            <div class="ia-form-header">
+                                <h3 id="ia-modal-title">Parlez-nous de votre projet IA</h3>
+                                <p>Quelques questions pour vous orienter vers la formation la plus adaptée.</p>
+                            </div>
+                            ${this.renderWizard()}
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
     }
@@ -386,7 +405,52 @@ export class FormationIAPage extends Component {
             });
         });
 
+        this.attachModalEvents();
         this.attachWizardEvents();
+    }
+
+    attachModalEvents() {
+        document.querySelectorAll('.ia-open-modal').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openModal();
+            });
+        });
+
+        const modal = document.getElementById('ia-modal');
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                const trigger = e.target.closest('[data-action="close-modal"]');
+                if (trigger) {
+                    e.preventDefault();
+                    this.closeModal();
+                }
+            });
+        }
+    }
+
+    openModal() {
+        const modal = document.getElementById('ia-modal');
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('ia-modal-locked');
+        document.addEventListener('keydown', this._handleEscape);
+        this.state.modalOpen = true;
+    }
+
+    closeModal() {
+        const modal = document.getElementById('ia-modal');
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('ia-modal-locked');
+        document.removeEventListener('keydown', this._handleEscape);
+        this.state.modalOpen = false;
+    }
+
+    _handleEscape(e) {
+        if (e.key === 'Escape') this.closeModal();
     }
 
     attachWizardEvents() {
@@ -428,20 +492,54 @@ export class FormationIAPage extends Component {
     goToStep(step) {
         if (step === 2 && !this.isStep1Valid()) return;
         this.state.step = step;
-        const wrapper = this.find('.ia-form-wrapper');
-        if (wrapper) {
-            wrapper.innerHTML = this.renderWizard();
-            this.attachWizardEvents();
-            wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        const wrapper = document.querySelector('.ia-modal .ia-form-wrapper');
+        if (!wrapper) return;
+
+        const header = wrapper.querySelector('.ia-form-header');
+        const headerHTML = header ? header.outerHTML : '';
+        wrapper.innerHTML = headerHTML + this.renderWizard();
+        this.attachWizardEvents();
+
+        const box = document.querySelector('.ia-modal-box');
+        if (box) box.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     async handleSubmit(form) {
         if (!this.isStep2Valid()) return;
-        await submitLeadFromForm(form, {
+        const result = await submitLeadFromForm(form, {
             formType: 'formation-ia',
-            successMessage: 'Merci pour votre demande. Un conseiller IA analysera votre projet et vous recontactera sous 24h ouvrées.',
+            successMessage: 'Merci pour votre demande. Un conseiller analysera votre projet et vous recontactera sous 24h ouvrées.',
         });
+
+        if (result && result.ok) {
+            setTimeout(() => {
+                this.closeModal();
+                setTimeout(() => this.resetWizard(), 400);
+            }, 3500);
+        }
+    }
+
+    resetWizard() {
+        this.state.step = 1;
+        this.state.values = {
+            formation_souhaitee: '',
+            situation: '',
+            lieu: '',
+            niveau: '',
+            prenom: '',
+            nom: '',
+            phone: '',
+            email: '',
+            consent: false,
+        };
+        const wrapper = document.querySelector('.ia-modal .ia-form-wrapper');
+        if (!wrapper) return;
+        const header = wrapper.querySelector('.ia-form-header');
+        const headerHTML = header
+            ? header.outerHTML
+            : '<div class="ia-form-header"><h3 id="ia-modal-title">Parlez-nous de votre projet IA</h3><p>Quelques questions pour vous orienter vers la formation la plus adaptée.</p></div>';
+        wrapper.innerHTML = headerHTML + this.renderWizard();
+        this.attachWizardEvents();
     }
 
     onMount() {

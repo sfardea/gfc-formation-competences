@@ -1882,6 +1882,49 @@ body.has-actu-banner .actu-landing {
     margin: 0 auto;
 }
 
+/* Variante : pitch centré + CTA pour ouvrir la modal */
+.ia-contact-center {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ia-contact-center h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.ia-contact-center h2 .text-accent {
+    background: linear-gradient(120deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ia-contact-center p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0;
+}
+
+.ia-contact-center .ia-contact-reassurance {
+    text-align: left;
+    margin: 0 auto;
+}
+
+.ia-contact-cta {
+    margin-top: 0.75rem;
+}
+
 .ia-contact-pitch {
     color: #fff;
 }
@@ -1955,13 +1998,108 @@ body.has-actu-banner .actu-landing {
     font-size: 0.7rem;
 }
 
-/* ===== Wizard formulaire IA ===== */
-.ia-form-wrapper {
+/* ===== Modal Formulaire IA ===== */
+.ia-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ia-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ia-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 14, 39, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.ia-modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 820px;
+    max-height: 92vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem 1rem 1rem 0.5rem;
+    transform: scale(0.96) translateY(8px);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ia-modal.is-open .ia-modal-box {
+    transform: scale(1) translateY(0);
+}
+
+.ia-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 38px;
+    height: 38px;
+    border: 2px solid var(--primary-orange);
     background: #fff;
-    border-radius: 22px;
-    padding: 2rem 2rem 2.25rem;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 3;
+    box-shadow: 3px 3px 0 rgba(255, 106, 74, 0.3);
+}
+
+.ia-modal-close:hover {
+    transform: rotate(90deg);
+    background: var(--primary-orange);
+    color: #fff;
+}
+
+body.ia-modal-locked {
+    overflow: hidden;
+}
+
+/* ===== Wizard formulaire IA — style cartoon (cohérent page d'accueil) ===== */
+.ia-form-wrapper {
+    background: #fff5f3;
+    padding: 2.25rem 2.5rem 2.5rem;
+    border-radius: 35px 30px 33px 28px;
+    border: 3px solid var(--primary-orange);
+    box-shadow: 6px 6px 0 rgba(255, 106, 74, 0.3);
     color: #2b325e;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transform: rotate(-0.4deg);
+    position: relative;
+}
+
+.ia-form-header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.ia-form-header h3 {
+    color: var(--primary-blue, #2b325e);
+    font-size: 1.75rem;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+}
+
+.ia-form-header p {
+    color: var(--text-gray, #4a5568);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .ia-form-wizard {
@@ -1971,25 +2109,26 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-wizard-progress {
-    height: 6px;
-    background: #eef0fb;
+    height: 8px;
+    background: rgba(43, 51, 94, 0.1);
     border-radius: 999px;
     overflow: hidden;
+    border: 1.5px solid rgba(255, 106, 74, 0.25);
 }
 
 .ia-wizard-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+    background: linear-gradient(90deg, var(--primary-orange) 0%, var(--primary-orange-light, #ff8a6f) 100%);
     border-radius: 999px;
     transition: width 0.35s ease;
 }
 
 .ia-wizard-step-label {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #7c3aed;
+    font-weight: 700;
+    color: var(--primary-orange);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
 
 .ia-wizard-step {
@@ -2009,9 +2148,9 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-wizard-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: #4f46e5;
+    color: var(--primary-blue, #2b325e);
     margin: 0 0 0.25rem;
     line-height: 1.3;
 }
@@ -2029,21 +2168,21 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-form-group label {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #2b325e;
 }
 
 .ia-form-group input,
 .ia-form-group select {
-    padding: 0.85rem 1rem;
-    border: 1.5px solid #e2e5f1;
-    border-radius: 10px;
-    font-size: 0.98rem;
-    font-family: inherit;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid rgba(43, 51, 94, 0.15);
+    border-radius: 18px 16px 17px 19px;
+    font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background: #fff;
     color: #2b325e;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.3s ease;
     width: 100%;
     box-sizing: border-box;
     -webkit-appearance: none;
@@ -2051,7 +2190,7 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-form-group select {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%23ff6a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
@@ -2061,8 +2200,10 @@ body.has-actu-banner .actu-landing {
 .ia-form-group input:focus,
 .ia-form-group select:focus {
     outline: none;
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+    border-color: var(--primary-orange);
+    border-width: 3px;
+    box-shadow: 3px 3px 0 rgba(255, 106, 74, 0.25);
+    transform: translateY(-2px);
 }
 
 .ia-form-group input::placeholder {
@@ -2128,12 +2269,12 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-checkbox-label:hover > span::before {
-    border-color: #4f46e5;
+    border-color: var(--primary-orange);
 }
 
 .ia-checkbox-label input[type="checkbox"]:checked + span::before {
-    background: #4f46e5;
-    border-color: #4f46e5;
+    background: var(--primary-orange);
+    border-color: var(--primary-orange);
 }
 
 .ia-checkbox-label input[type="checkbox"]:checked + span::after {
@@ -2141,12 +2282,13 @@ body.has-actu-banner .actu-landing {
 }
 
 .ia-checkbox-label input[type="checkbox"]:focus-visible + span::before {
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 0 0 3px rgba(255, 106, 74, 0.25);
 }
 
 .ia-checkbox-label a {
-    color: #4f46e5;
+    color: var(--primary-orange);
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .ia-wizard-actions {
@@ -2262,7 +2404,8 @@ body.has-actu-banner .actu-landing {
         text-align: center;
     }
 
-    .ia-contact-pitch h2 {
+    .ia-contact-pitch h2,
+    .ia-contact-center h2 {
         font-size: 1.75rem;
     }
 
@@ -2271,8 +2414,21 @@ body.has-actu-banner .actu-landing {
         text-align: left;
     }
 
+    .ia-modal {
+        padding: 0.75rem;
+    }
+
+    .ia-modal-box {
+        max-height: 95vh;
+    }
+
     .ia-form-wrapper {
-        padding: 1.5rem 1.25rem 1.75rem;
+        padding: 1.75rem 1.25rem 1.75rem;
+        transform: rotate(0deg);
+    }
+
+    .ia-form-header h3 {
+        font-size: 1.35rem;
     }
 
     .ia-form-row {

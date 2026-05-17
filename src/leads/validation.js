@@ -54,6 +54,9 @@ function validateLeadPayload(raw) {
         objectif: clean(raw.objectif, 60),
         experience: clean(raw.experience, 60),
         experience_france: clean(raw.experience_france, 60),
+        lieu: clean(raw.lieu, 60),
+        niveau: clean(raw.niveau, 60),
+        formation_souhaitee: clean(raw.formation_souhaitee, 80),
         message: clean(raw.message, MAX_TEXT),
         consent: Boolean(raw.consent === true || raw.consent === 'on' || raw.consent === '1'),
     };

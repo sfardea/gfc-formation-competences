@@ -50,6 +50,30 @@ const EXPERIENCE_LABELS = {
     'plus-5-ans': 'Plus de 5 ans',
 };
 
+const LIEU_LABELS = {
+    distance: 'À distance',
+    presentiel: 'En présentiel',
+    mixte: 'Mixte (présentiel + distanciel)',
+};
+
+const NIVEAU_LABELS = {
+    'bep-cap': 'BEP / CAP',
+    bac: 'BAC',
+    'bac+2': 'BAC +2',
+    'bac+3': 'BAC +3',
+    'bac+4': 'BAC +4',
+    'bac+5': 'BAC +5',
+    'sup-bac+5': '> BAC +5',
+};
+
+const FORMATION_IA_LABELS = {
+    'ia-marketing-digital': 'IA pour le Marketing Digital',
+    chatgpt: 'ChatGPT & IA générative',
+    'ia-developpeurs': 'IA pour Développeurs',
+    'ia-decideurs': 'IA pour Décideurs',
+    'non-defini': 'Non défini (à orienter)',
+};
+
 function splitFullName(fullName) {
     if (!fullName) return { first: '', last: '' };
     const parts = String(fullName).trim().split(/\s+/);
@@ -74,8 +98,17 @@ function buildDescription(payload, meta) {
     lines.push(`Source : ${meta.source || 'site web'}`);
     if (meta.page) lines.push(`Page d'origine : ${meta.page}`);
 
+    if (payload.formation_souhaitee) {
+        lines.push(`Formation souhaitée : ${pickLabel(FORMATION_IA_LABELS, payload.formation_souhaitee)}`);
+    }
     if (payload.situation) {
         lines.push(`Situation : ${pickLabel(SITUATION_LABELS, payload.situation)}`);
+    }
+    if (payload.lieu) {
+        lines.push(`Lieu de formation : ${pickLabel(LIEU_LABELS, payload.lieu)}`);
+    }
+    if (payload.niveau) {
+        lines.push(`Niveau actuel : ${pickLabel(NIVEAU_LABELS, payload.niveau)}`);
     }
     if (payload.objectif) {
         lines.push(`Objectif : ${pickLabel(OBJECTIF_LABELS, payload.objectif)}`);
@@ -152,4 +185,7 @@ module.exports = {
     SITUATION_LABELS,
     OBJECTIF_LABELS,
     EXPERIENCE_LABELS,
+    LIEU_LABELS,
+    NIVEAU_LABELS,
+    FORMATION_IA_LABELS,
 };

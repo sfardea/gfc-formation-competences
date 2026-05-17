@@ -1,8 +1,23 @@
 import { Component } from '../js/core/Component.js';
+import { submitLeadFromForm } from '../js/leadSubmit.js';
 
 export class FormationIAPage extends Component {
     constructor() {
         super();
+        this.state = {
+            step: 1,
+            values: {
+                formation_souhaitee: '',
+                situation: '',
+                lieu: '',
+                niveau: '',
+                prenom: '',
+                nom: '',
+                phone: '',
+                email: '',
+                consent: false,
+            },
+        };
     }
 
     template() {
@@ -29,7 +44,7 @@ export class FormationIAPage extends Component {
                             <div class="hero-cta slide-up">
                                 <a href="#contact-ia" class="btn btn-primary btn-lg pulse-hover">
                                     <i class="fas fa-phone-alt"></i>
-                                    Contactez-nous
+                                    Être rappelé(e) par un conseiller
                                 </a>
                                 <a href="#domaines" class="btn btn-secondary btn-lg">
                                     <i class="fas fa-arrow-down"></i>
@@ -193,21 +208,168 @@ export class FormationIAPage extends Component {
                     </div>
                 </section>
 
-                <!-- Section : Contact CTA -->
+                <!-- Section : Contact CTA + Formulaire dédié IA -->
                 <section class="ia-section ia-contact" id="contact-ia">
                     <div class="container">
-                        <div class="ia-cta-box">
-                            <h2 class="fade-in">Prêt à vous lancer dans l'IA ?</h2>
-                            <p class="slide-up">Contactez-nous pour en savoir plus sur nos formations et trouver celle qui correspond à vos objectifs.</p>
-                            <a href="/#contact" class="btn btn-primary btn-lg pulse-hover slide-up">
-                                <i class="fas fa-paper-plane"></i>
-                                Contactez-nous
-                            </a>
+                        <div class="ia-contact-grid">
+                            <div class="ia-contact-pitch">
+                                <div class="ia-contact-badge fade-in">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Démarrez votre projet IA</span>
+                                </div>
+                                <h2 class="fade-in">Prêt(e) à vous lancer dans l'<span class="text-accent">IA</span> ?</h2>
+                                <p class="slide-up">Échangez avec un conseiller pour identifier la formation la plus adaptée à votre profil, vos objectifs et vos modalités de financement.</p>
+                                <ul class="ia-contact-reassurance slide-up">
+                                    <li><i class="fas fa-check"></i> Réponse personnalisée sous 24h ouvrées</li>
+                                    <li><i class="fas fa-check"></i> Étude gratuite et sans engagement</li>
+                                    <li><i class="fas fa-check"></i> Accompagnement par notre collectif d'experts</li>
+                                </ul>
+                            </div>
+
+                            <div class="ia-form-wrapper scale-in">
+                                ${this.renderWizard()}
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         `;
+    }
+
+    renderWizard() {
+        const { step, values } = this.state;
+        const totalSteps = 2;
+        const progress = (step / totalSteps) * 100;
+
+        return `
+            <form class="ia-form-wizard" novalidate>
+                <div class="ia-wizard-progress" aria-hidden="true">
+                    <div class="ia-wizard-progress-bar" style="width: ${progress}%"></div>
+                </div>
+                <div class="ia-wizard-step-label">
+                    <span>Étape ${step} sur ${totalSteps}</span>
+                </div>
+
+                <div class="ia-wizard-step ${step === 1 ? 'is-active' : ''}" data-step="1">
+                    <h3 class="ia-wizard-title">Parlez-nous de votre projet</h3>
+
+                    <div class="ia-form-group">
+                        <label for="ia-formation">Formation souhaitée</label>
+                        <select id="ia-formation" name="formation_souhaitee" data-field="formation_souhaitee" required>
+                            <option value="">Choisissez</option>
+                            <option value="ia-marketing-digital" ${values.formation_souhaitee === 'ia-marketing-digital' ? 'selected' : ''}>IA pour le Marketing Digital</option>
+                            <option value="chatgpt" ${values.formation_souhaitee === 'chatgpt' ? 'selected' : ''}>ChatGPT &amp; IA générative</option>
+                            <option value="ia-developpeurs" ${values.formation_souhaitee === 'ia-developpeurs' ? 'selected' : ''}>IA pour Développeurs</option>
+                            <option value="ia-decideurs" ${values.formation_souhaitee === 'ia-decideurs' ? 'selected' : ''}>IA pour Décideurs</option>
+                            <option value="non-defini" ${values.formation_souhaitee === 'non-defini' ? 'selected' : ''}>Je ne sais pas encore</option>
+                        </select>
+                    </div>
+
+                    <div class="ia-form-row">
+                        <div class="ia-form-group">
+                            <label for="ia-situation">Situation</label>
+                            <select id="ia-situation" name="situation" data-field="situation" required>
+                                <option value="">Choisissez</option>
+                                <option value="salarie" ${values.situation === 'salarie' ? 'selected' : ''}>Salarié(e) en poste</option>
+                                <option value="demandeur-emploi" ${values.situation === 'demandeur-emploi' ? 'selected' : ''}>Demandeur d'emploi</option>
+                                <option value="entreprise" ${values.situation === 'entreprise' ? 'selected' : ''}>Dirigeant / Entreprise</option>
+                                <option value="independant" ${values.situation === 'independant' ? 'selected' : ''}>Indépendant(e)</option>
+                                <option value="etudiant" ${values.situation === 'etudiant' ? 'selected' : ''}>Étudiant(e)</option>
+                            </select>
+                        </div>
+
+                        <div class="ia-form-group">
+                            <label for="ia-lieu">Lieu de formation</label>
+                            <select id="ia-lieu" name="lieu" data-field="lieu" required>
+                                <option value="">Choisissez</option>
+                                <option value="distance" ${values.lieu === 'distance' ? 'selected' : ''}>À distance</option>
+                                <option value="presentiel" ${values.lieu === 'presentiel' ? 'selected' : ''}>En présentiel</option>
+                                <option value="mixte" ${values.lieu === 'mixte' ? 'selected' : ''}>Mixte (présentiel + distanciel)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="ia-form-group">
+                        <label for="ia-niveau">Niveau actuel</label>
+                        <select id="ia-niveau" name="niveau" data-field="niveau" required>
+                            <option value="">Choisissez</option>
+                            <option value="bep-cap" ${values.niveau === 'bep-cap' ? 'selected' : ''}>BEP / CAP</option>
+                            <option value="bac" ${values.niveau === 'bac' ? 'selected' : ''}>BAC</option>
+                            <option value="bac+2" ${values.niveau === 'bac+2' ? 'selected' : ''}>BAC +2</option>
+                            <option value="bac+3" ${values.niveau === 'bac+3' ? 'selected' : ''}>BAC +3</option>
+                            <option value="bac+4" ${values.niveau === 'bac+4' ? 'selected' : ''}>BAC +4</option>
+                            <option value="bac+5" ${values.niveau === 'bac+5' ? 'selected' : ''}>BAC +5</option>
+                            <option value="sup-bac+5" ${values.niveau === 'sup-bac+5' ? 'selected' : ''}>&gt; BAC +5</option>
+                        </select>
+                    </div>
+
+                    <div class="ia-wizard-actions">
+                        <button type="button" class="btn btn-orange btn-lg ia-wizard-next" data-action="next" ${this.isStep1Valid() ? '' : 'disabled'}>
+                            Suivant
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ia-wizard-step ${step === 2 ? 'is-active' : ''}" data-step="2">
+                    <h3 class="ia-wizard-title">Recevez gratuitement nos informations sur la formation</h3>
+
+                    <div class="ia-form-row">
+                        <div class="ia-form-group">
+                            <label for="ia-prenom">Prénom</label>
+                            <input type="text" id="ia-prenom" name="prenom" data-field="prenom" value="${values.prenom}" placeholder="Votre prénom" autocomplete="given-name" autocapitalize="words" required>
+                        </div>
+                        <div class="ia-form-group">
+                            <label for="ia-nom">Nom</label>
+                            <input type="text" id="ia-nom" name="nom" data-field="nom" value="${values.nom}" placeholder="Votre nom" autocomplete="family-name" autocapitalize="words" required>
+                        </div>
+                    </div>
+
+                    <div class="ia-form-row">
+                        <div class="ia-form-group">
+                            <label for="ia-phone">Téléphone mobile</label>
+                            <input type="tel" id="ia-phone" name="phone" data-field="phone" value="${values.phone}" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" required>
+                        </div>
+                        <div class="ia-form-group">
+                            <label for="ia-email">Email</label>
+                            <input type="email" id="ia-email" name="email" data-field="email" value="${values.email}" placeholder="vous@exemple.fr" autocomplete="email" inputmode="email" spellcheck="false" required>
+                        </div>
+                    </div>
+
+                    <div class="ia-form-group ia-form-consent">
+                        <label class="ia-checkbox-label">
+                            <input type="checkbox" name="consent" data-field="consent" ${values.consent ? 'checked' : ''} required>
+                            <span>
+                                J'accepte d'être recontacté(e) par Formation Compétences au sujet de ma demande
+                                et j'ai pris connaissance de la
+                                <a href="/politique-confidentialite" target="_blank" rel="noopener">politique de confidentialité</a>.
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="ia-wizard-actions ia-wizard-actions-split">
+                        <button type="button" class="btn btn-secondary btn-lg ia-wizard-back" data-action="back">
+                            <i class="fas fa-arrow-left"></i>
+                            Retour
+                        </button>
+                        <button type="submit" class="btn btn-orange btn-lg ia-wizard-submit" ${this.isStep2Valid() ? '' : 'disabled'}>
+                            <i class="fas fa-paper-plane"></i>
+                            Être rappelé(e) par un conseiller
+                        </button>
+                    </div>
+                </div>
+            </form>
+        `;
+    }
+
+    isStep1Valid() {
+        const v = this.state.values;
+        return Boolean(v.formation_souhaitee && v.situation && v.lieu && v.niveau);
+    }
+
+    isStep2Valid() {
+        const v = this.state.values;
+        return Boolean(v.prenom && v.nom && v.phone && v.email && v.consent);
     }
 
     attachEvents() {
@@ -223,5 +385,89 @@ export class FormationIAPage extends Component {
                 }
             });
         });
+
+        this.attachWizardEvents();
+    }
+
+    attachWizardEvents() {
+        const form = this.find('.ia-form-wizard');
+        if (!form) return;
+
+        form.addEventListener('change', (e) => this.handleFieldChange(e));
+        form.addEventListener('input', (e) => this.handleFieldChange(e));
+
+        form.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-action]');
+            if (!btn) return;
+            const action = btn.dataset.action;
+            if (action === 'next') this.goToStep(2);
+            else if (action === 'back') this.goToStep(1);
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.handleSubmit(form);
+        });
+    }
+
+    handleFieldChange(e) {
+        const field = e.target.dataset.field;
+        if (!field) return;
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        this.state.values[field] = value;
+        this.refreshButtonsState();
+    }
+
+    refreshButtonsState() {
+        const nextBtn = this.find('.ia-wizard-next');
+        const submitBtn = this.find('.ia-wizard-submit');
+        if (nextBtn) nextBtn.disabled = !this.isStep1Valid();
+        if (submitBtn) submitBtn.disabled = !this.isStep2Valid();
+    }
+
+    goToStep(step) {
+        if (step === 2 && !this.isStep1Valid()) return;
+        this.state.step = step;
+        const wrapper = this.find('.ia-form-wrapper');
+        if (wrapper) {
+            wrapper.innerHTML = this.renderWizard();
+            this.attachWizardEvents();
+            wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    async handleSubmit(form) {
+        if (!this.isStep2Valid()) return;
+        await submitLeadFromForm(form, {
+            formType: 'formation-ia',
+            successMessage: 'Merci pour votre demande. Un conseiller IA analysera votre projet et vous recontactera sous 24h ouvrées.',
+        });
+    }
+
+    onMount() {
+        this.initNavbarScroll();
+    }
+
+    initNavbarScroll() {
+        const navbar = document.querySelector('.navbar');
+        const hero = document.querySelector('.hero-page');
+        if (!navbar || !hero) return;
+
+        navbar.classList.add('navbar-hero');
+
+        const handleScroll = () => {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            const scrollY = window.scrollY + navbar.offsetHeight;
+            if (scrollY > heroBottom - 50) {
+                navbar.classList.remove('navbar-hero');
+                navbar.classList.remove('navbar-scrolled');
+            } else {
+                navbar.classList.add('navbar-hero');
+                navbar.classList.remove('navbar-scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
     }
 }

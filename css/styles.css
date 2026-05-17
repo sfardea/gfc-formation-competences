@@ -1607,7 +1607,7 @@ ul {
     font-size: 3rem;
     color: var(--primary-orange);
     opacity: 0.2;
-    font-family: Georgia, serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .testimonial-card:hover {
@@ -1997,9 +1997,9 @@ ul {
 .footer-links a,
 .footer-legal a {
     color: rgba(255, 255, 255, 0.9);
-    line-height: 2;
+    line-height: 1.9;
     transition: var(--transition);
-    font-size: 0.95rem;
+    font-size: 0.8125rem;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -2387,7 +2387,7 @@ ul {
 
 .footer-tagline .tagline-sub {
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.8125rem;
 }
 
 .footer-tagline .tagline-item {
@@ -2607,8 +2607,8 @@ ul {
     align-items: flex-start;
     gap: 1rem;
     padding: var(--spacing-sm) 0;
-    color: var(--text-dark);
-    font-size: 1rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
     line-height: 1.5;
 }
 
@@ -2630,7 +2630,9 @@ ul {
 .cta-benefits li strong {
     color: var(--primary-blue);
     font-weight: 600;
-    white-space: nowrap;
+    display: block;
+    margin-bottom: 0.25rem;
+    white-space: normal;
 }
 
 /* ========================================
@@ -4868,7 +4870,7 @@ ul {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
     border-top: 1px solid var(--border-color);
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .reassurance-item {
@@ -4876,6 +4878,7 @@ ul {
     align-items: center;
     gap: 0.5rem;
     color: var(--text-light);
+    font-size: 0.875rem;
 }
 
 .reassurance-item i {
@@ -5372,7 +5375,7 @@ ul {
     
     .cta-reassurance {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
     
     .etapes-timeline {

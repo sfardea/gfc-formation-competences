@@ -565,12 +565,12 @@ html, body {
         gap: 0.625rem !important;
         margin-top: 1rem !important;
         padding-top: 1rem !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
     .reassurance-item {
-        font-size: 0.95rem;
+        font-size: 0.8125rem;
     }
 
     /* --- Encadré orange : wrapper du formulaire --- */
